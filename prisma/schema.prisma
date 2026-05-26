@@ -1,0 +1,350 @@
+// prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================
+// AUTH MODELS
+// ============================================
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  role          UserRole  @default(STUDENT)
+  phone         String?
+  country       String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  accounts      Account[]
+  sessions      Session[]
+  favorites     Favorite[]
+  bookings      Booking[]
+  applications  Application[]
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+enum UserRole {
+  STUDENT
+  ADMIN
+  CONSULTANT
+}
+
+// ============================================
+// UNIVERSITY MODELS
+// ============================================
+
+model University {
+  id               String            @id @default(cuid())
+  slug             String            @unique
+  nameEn           String
+  nameAr           String
+  nameTr           String
+  logoUrl          String?
+  coverImageUrl    String?
+  city             String
+  cityEn           String
+  cityAr           String
+  cityTr           String
+  type             UniversityType
+  ranking          Int?
+  descriptionEn    String            @db.Text
+  descriptionAr    String            @db.Text
+  descriptionTr    String            @db.Text
+  website          String?
+  email            String?
+  phone            String?
+  address          String?
+  latitude         Float?
+  longitude        Float?
+  establishedYear  Int?
+  totalStudents    Int?
+  internationalStudents Int?
+  isActive         Boolean           @default(true)
+  isFeatured       Boolean           @default(false)
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+
+  programs         Program[]
+  gallery          GalleryImage[]
+  scholarships     Scholarship[]
+  requirements     Requirement[]
+  favorites        Favorite[]
+  applications     Application[]
+}
+
+enum UniversityType {
+  PUBLIC
+  PRIVATE
+}
+
+model Program {
+  id               String       @id @default(cuid())
+  slug             String       @unique
+  nameEn           String
+  nameAr           String
+  nameTr           String
+  degreeType       DegreeType
+  language         ProgramLang
+  tuitionFeeUSD    Float
+  tuitionFeeTRY    Float?
+  duration         Int          // in years
+  descriptionEn    String       @db.Text
+  descriptionAr    String       @db.Text
+  descriptionTr    String       @db.Text
+  careerOppsEn     String       @db.Text
+  careerOppsAr     String       @db.Text
+  careerOppsTr     String       @db.Text
+  category         String
+  isActive         Boolean      @default(true)
+  isFeatured       Boolean      @default(false)
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+
+  universityId     String
+  university       University   @relation(fields: [universityId], references: [id], onDelete: Cascade)
+}
+
+enum DegreeType {
+  BACHELOR
+  MASTER
+  PHD
+  DIPLOMA
+}
+
+enum ProgramLang {
+  ENGLISH
+  TURKISH
+  ARABIC
+  ENGLISH_TURKISH
+}
+
+model GalleryImage {
+  id           String     @id @default(cuid())
+  url          String
+  alt          String?
+  universityId String
+  university   University @relation(fields: [universityId], references: [id], onDelete: Cascade)
+}
+
+model Scholarship {
+  id           String     @id @default(cuid())
+  nameEn       String
+  nameAr       String
+  nameTr       String
+  descEn       String     @db.Text
+  descAr       String     @db.Text
+  descTr       String     @db.Text
+  amount       Float?
+  percentage   Int?
+  universityId String
+  university   University @relation(fields: [universityId], references: [id], onDelete: Cascade)
+}
+
+model Requirement {
+  id           String     @id @default(cuid())
+  textEn       String
+  textAr       String
+  textTr       String
+  universityId String
+  university   University @relation(fields: [universityId], references: [id], onDelete: Cascade)
+}
+
+// ============================================
+// BOOKING / CRM MODELS
+// ============================================
+
+model Booking {
+  id              String        @id @default(cuid())
+  userId          String?
+  user            User?         @relation(fields: [userId], references: [id])
+  firstName       String
+  lastName        String
+  email           String
+  phone           String
+  country         String
+  budget          Float?
+  majorInterest   String?
+  degreeType      DegreeType?
+  preferredDate   DateTime
+  preferredTime   String
+  meetingType     MeetingType
+  notes           String?       @db.Text
+  status          BookingStatus @default(PENDING)
+  adminNotes      String?       @db.Text
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+}
+
+enum MeetingType {
+  ZOOM
+  GOOGLE_MEET
+  WHATSAPP
+  IN_PERSON
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  COMPLETED
+}
+
+model Lead {
+  id            String    @id @default(cuid())
+  firstName     String
+  lastName      String
+  email         String
+  phone         String
+  country       String
+  budget        Float?
+  majorInterest String?
+  degreeType    DegreeType?
+  source        LeadSource
+  status        LeadStatus @default(NEW)
+  notes         String?   @db.Text
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+enum LeadSource {
+  WEBSITE
+  WHATSAPP
+  REFERRAL
+  SOCIAL_MEDIA
+  OTHER
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  QUALIFIED
+  CONVERTED
+  LOST
+}
+
+// ============================================
+// CONTENT MODELS
+// ============================================
+
+model BlogPost {
+  id          String     @id @default(cuid())
+  slug        String     @unique
+  titleEn     String
+  titleAr     String
+  titleTr     String
+  excerptEn   String     @db.Text
+  excerptAr   String     @db.Text
+  excerptTr   String     @db.Text
+  contentEn   String     @db.Text
+  contentAr   String     @db.Text
+  contentTr   String     @db.Text
+  coverImage  String?
+  category    String
+  tags        String[]
+  published   Boolean    @default(false)
+  views       Int        @default(0)
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+}
+
+model Testimonial {
+  id         String   @id @default(cuid())
+  nameEn     String
+  nameAr     String
+  nameTr     String
+  country    String
+  university String
+  major      String
+  contentEn  String   @db.Text
+  contentAr  String   @db.Text
+  contentTr  String   @db.Text
+  avatar     String?
+  rating     Int      @default(5)
+  isActive   Boolean  @default(true)
+  createdAt  DateTime @default(now())
+}
+
+model Favorite {
+  id           String     @id @default(cuid())
+  userId       String
+  universityId String
+  user         User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  university   University @relation(fields: [universityId], references: [id], onDelete: Cascade)
+  createdAt    DateTime   @default(now())
+
+  @@unique([userId, universityId])
+}
+
+model Application {
+  id           String     @id @default(cuid())
+  userId       String
+  universityId String
+  programId    String?
+  status       AppStatus  @default(DRAFT)
+  notes        String?    @db.Text
+  documents    String[]
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  user         User       @relation(fields: [userId], references: [id])
+  university   University @relation(fields: [universityId], references: [id])
+}
+
+enum AppStatus {
+  DRAFT
+  SUBMITTED
+  UNDER_REVIEW
+  ACCEPTED
+  REJECTED
+  WAITLISTED
+}
+
+model Newsletter {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  locale    String   @default("en")
+  createdAt DateTime @default(now())
+}

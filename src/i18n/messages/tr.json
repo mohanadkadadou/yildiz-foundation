@@ -1,0 +1,190 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "universities": "Üniversiteler",
+    "programs": "Programlar",
+    "blog": "Blog",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "bookConsultation": "Danışmanlık Al",
+    "login": "Giriş Yap",
+    "register": "Kayıt Ol",
+    "dashboard": "Kontrol Paneli",
+    "logout": "Çıkış Yap"
+  },
+  "hero": {
+    "badge": "Türkiye'nin 1 Numaralı Eğitim Danışmanlığı",
+    "title": "Türk Üniversitelerine",
+    "titleHighlight": "Açılan Kapınız",
+    "subtitle": "En iyi üniversiteleri keşfedin, programları karşılaştırın ve Türkiye'deki akademik yolculuğunuza başlamak için uzman rehberlik alın.",
+    "searchPlaceholder": "Üniversite, program, şehir ara...",
+    "searchBtn": "Ara",
+    "stats": {
+      "universities": "Üniversite",
+      "students": "Yardım Edilen Öğrenci",
+      "countries": "Ülke",
+      "successRate": "Başarı Oranı"
+    }
+  },
+  "search": {
+    "title": "Mükemmel Üniversitenizi Bulun",
+    "subtitle": "Hedeflerinize en uygun eşleşmeyi bulmak için akıllı filtrelerimizi kullanın",
+    "filters": {
+      "major": "Bölüm Seçin",
+      "city": "Şehir Seçin",
+      "degree": "Derece Türü",
+      "language": "Eğitim Dili",
+      "budget": "Bütçe Aralığı",
+      "type": "Üniversite Türü"
+    },
+    "results": "üniversite bulundu",
+    "noResults": "Kriterlerinize uygun üniversite bulunamadı",
+    "clearFilters": "Filtreleri Temizle"
+  },
+  "universities": {
+    "featured": "Öne Çıkan Üniversiteler",
+    "all": "Tüm Üniversiteler",
+    "viewAll": "Tüm Üniversiteleri Gör",
+    "viewDetails": "Detayları Gör",
+    "public": "Devlet",
+    "private": "Özel",
+    "ranking": "Sıralama",
+    "tuition": "Başlangıç Ücreti",
+    "programs": "Program",
+    "students": "Öğrenci",
+    "compare": "Karşılaştır",
+    "favorite": "Favorilere Ekle",
+    "apply": "Şimdi Başvur"
+  },
+  "programs": {
+    "popular": "Popüler Programlar",
+    "all": "Tüm Programlar",
+    "bachelor": "Lisans",
+    "master": "Yüksek Lisans",
+    "phd": "Doktora",
+    "diploma": "Diploma",
+    "duration": "Süre",
+    "years": "yıl",
+    "language": "Eğitim Dili",
+    "tuition": "Yıllık Ücret",
+    "careers": "Kariyer Fırsatları",
+    "viewAll": "Tüm Programları Gör"
+  },
+  "whyTurkey": {
+    "title": "Neden Türkiye'de Okuyalım?",
+    "subtitle": "Türkiye, zengin kültür ve uygun yaşam maliyetiyle dünya standartlarında eğitim sunuyor",
+    "reasons": {
+      "affordable": {
+        "title": "Uygun Fiyatlı Eğitim",
+        "desc": "Batı maliyetinin çok altında dünya standartlarında dereceler"
+      },
+      "quality": {
+        "title": "Kaliteli Eğitim",
+        "desc": "200'den fazla uluslararası tanınan üniversite"
+      },
+      "culture": {
+        "title": "Zengin Kültür",
+        "desc": "Doğu ve Batı'nın eşsiz karışımını deneyimleyin"
+      },
+      "location": {
+        "title": "Stratejik Konum",
+        "desc": "Avrupa, Asya ve Orta Doğu arasında köprü"
+      },
+      "scholarships": {
+        "title": "Burs İmkânları",
+        "desc": "Cömert devlet ve üniversite bursları"
+      },
+      "safety": {
+        "title": "Güvenli ve Misafirperver",
+        "desc": "Uluslararası öğrenciler için samimi ortam"
+      }
+    }
+  },
+  "consultation": {
+    "title": "Yolculuğunuza Bugün Başlayın",
+    "subtitle": "Uzman danışmanlarımızla ücretsiz danışmanlık alın",
+    "bookBtn": "Ücretsiz Danışmanlık Al",
+    "form": {
+      "firstName": "Ad",
+      "lastName": "Soyad",
+      "email": "E-posta Adresi",
+      "phone": "Telefon Numarası",
+      "country": "Ülkeniz",
+      "budget": "Yıllık Bütçe (USD)",
+      "major": "Tercih Edilen Bölüm",
+      "degree": "Derece Türü",
+      "date": "Tercih Edilen Tarih",
+      "time": "Tercih Edilen Saat",
+      "meeting": "Toplantı Türü",
+      "notes": "Ek Notlar",
+      "submit": "Danışmanlık Al",
+      "success": "Danışmanlık başarıyla rezerve edildi! 24 saat içinde sizinle iletişime geçeceğiz."
+    }
+  },
+  "testimonials": {
+    "title": "Öğrenci Başarı Hikayeleri",
+    "subtitle": "Hayallerini gerçekleştirmelerine yardımcı olduğumuz öğrencilerden dinleyin"
+  },
+  "blog": {
+    "title": "Eğitim İçgörüleri",
+    "subtitle": "Türkiye'de okumak hakkında rehberler, ipuçları ve haberler",
+    "readMore": "Devamını Oku",
+    "viewAll": "Tüm Makaleleri Gör"
+  },
+  "faq": {
+    "title": "Sıkça Sorulan Sorular",
+    "subtitle": "Türkiye'de okumak hakkında bilmeniz gereken her şey"
+  },
+  "footer": {
+    "tagline": "En İyi Eğitim Danışmanınız",
+    "quickLinks": "Hızlı Bağlantılar",
+    "services": "Hizmetlerimiz",
+    "contact": "Bize Ulaşın",
+    "newsletter": "Bülten",
+    "newsletterDesc": "Burs ve üniversite güncellemeleri için abone olun",
+    "subscribe": "Abone Ol",
+    "emailPlaceholder": "E-posta adresiniz",
+    "rights": "Tüm hakları saklıdır",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Hizmet Şartları"
+  },
+  "ai": {
+    "title": "Yapay Zeka Üniversite Asistanı",
+    "subtitle": "Türk üniversiteleri hakkında her şeyi sorun",
+    "placeholder": "Örn: İstanbul'da 10.000$ bütçeyle Tıp okumak istiyorum...",
+    "send": "Gönder",
+    "typing": "Asistan yazıyor...",
+    "greeting": "Merhaba! Ben yapay zeka danışmanınızım. Eğitim hedeflerinizi ve bütçenizi bana söyleyin, size en iyi Türk üniversitelerini ve programları önereceğim!"
+  },
+  "whatsapp": "WhatsApp'ta Yazın",
+  "compare": {
+    "title": "Üniversiteleri Karşılaştır",
+    "add": "Karşılaştırmaya Ekle",
+    "remove": "Kaldır",
+    "compare": "Şimdi Karşılaştır",
+    "max": "Maksimum 3 üniversite karşılaştırılabilir"
+  },
+  "calculator": {
+    "title": "Eğitim Maliyeti Hesaplayıcı",
+    "program": "Program Seçin",
+    "duration": "Süre",
+    "currency": "Para Birimi",
+    "total": "Tahmini Toplam Maliyet",
+    "perYear": "Yıllık"
+  },
+  "admin": {
+    "dashboard": "Kontrol Paneli",
+    "universities": "Üniversiteler",
+    "programs": "Programlar",
+    "bookings": "Rezervasyonlar",
+    "leads": "Potansiyel Müşteriler",
+    "blog": "Blog Yazıları",
+    "testimonials": "Öğrenci Yorumları",
+    "analytics": "Analitik",
+    "settings": "Ayarlar",
+    "totalUniversities": "Toplam Üniversite",
+    "totalBookings": "Toplam Rezervasyon",
+    "totalLeads": "Toplam Müşteri",
+    "totalStudents": "Toplam Öğrenci"
+  }
+}

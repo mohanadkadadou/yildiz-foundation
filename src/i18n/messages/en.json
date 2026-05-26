@@ -1,0 +1,190 @@
+{
+  "nav": {
+    "home": "Home",
+    "universities": "Universities",
+    "programs": "Programs",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact",
+    "bookConsultation": "Book Consultation",
+    "login": "Login",
+    "register": "Register",
+    "dashboard": "Dashboard",
+    "logout": "Logout"
+  },
+  "hero": {
+    "badge": "Turkey's #1 Educational Consultancy",
+    "title": "Your Gateway to",
+    "titleHighlight": "Turkish Universities",
+    "subtitle": "Discover top universities, compare programs, and get expert guidance to start your academic journey in Turkey.",
+    "searchPlaceholder": "Search universities, programs, cities...",
+    "searchBtn": "Search",
+    "stats": {
+      "universities": "Universities",
+      "students": "Students Helped",
+      "countries": "Countries",
+      "successRate": "Success Rate"
+    }
+  },
+  "search": {
+    "title": "Find Your Perfect University",
+    "subtitle": "Use our smart filters to discover the best match for your goals",
+    "filters": {
+      "major": "Select Major",
+      "city": "Select City",
+      "degree": "Degree Type",
+      "language": "Language",
+      "budget": "Budget Range",
+      "type": "University Type"
+    },
+    "results": "universities found",
+    "noResults": "No universities found matching your criteria",
+    "clearFilters": "Clear Filters"
+  },
+  "universities": {
+    "featured": "Featured Universities",
+    "all": "All Universities",
+    "viewAll": "View All Universities",
+    "viewDetails": "View Details",
+    "public": "Public",
+    "private": "Private",
+    "ranking": "Ranking",
+    "tuition": "Tuition From",
+    "programs": "Programs",
+    "students": "Students",
+    "compare": "Compare",
+    "favorite": "Add to Favorites",
+    "apply": "Apply Now"
+  },
+  "programs": {
+    "popular": "Popular Programs",
+    "all": "All Programs",
+    "bachelor": "Bachelor",
+    "master": "Master",
+    "phd": "PhD",
+    "diploma": "Diploma",
+    "duration": "Duration",
+    "years": "years",
+    "language": "Language",
+    "tuition": "Tuition / Year",
+    "careers": "Career Opportunities",
+    "viewAll": "View All Programs"
+  },
+  "whyTurkey": {
+    "title": "Why Study in Turkey?",
+    "subtitle": "Turkey offers world-class education combined with rich culture and affordable living",
+    "reasons": {
+      "affordable": {
+        "title": "Affordable Education",
+        "desc": "World-class degrees at a fraction of Western costs"
+      },
+      "quality": {
+        "title": "Quality Education",
+        "desc": "200+ internationally recognized universities"
+      },
+      "culture": {
+        "title": "Rich Culture",
+        "desc": "Experience a unique blend of East and West"
+      },
+      "location": {
+        "title": "Strategic Location",
+        "desc": "Bridge between Europe, Asia, and the Middle East"
+      },
+      "scholarships": {
+        "title": "Scholarships Available",
+        "desc": "Generous government and university scholarships"
+      },
+      "safety": {
+        "title": "Safe & Welcoming",
+        "desc": "Friendly environment for international students"
+      }
+    }
+  },
+  "consultation": {
+    "title": "Start Your Journey Today",
+    "subtitle": "Book a free consultation with our expert advisors",
+    "bookBtn": "Book Free Consultation",
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "country": "Your Country",
+      "budget": "Annual Budget (USD)",
+      "major": "Preferred Major",
+      "degree": "Degree Type",
+      "date": "Preferred Date",
+      "time": "Preferred Time",
+      "meeting": "Meeting Type",
+      "notes": "Additional Notes",
+      "submit": "Book Consultation",
+      "success": "Consultation booked successfully! We'll contact you within 24 hours."
+    }
+  },
+  "testimonials": {
+    "title": "Student Success Stories",
+    "subtitle": "Hear from students we've helped achieve their dreams"
+  },
+  "blog": {
+    "title": "Education Insights",
+    "subtitle": "Guides, tips, and news about studying in Turkey",
+    "readMore": "Read More",
+    "viewAll": "View All Articles"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about studying in Turkey"
+  },
+  "footer": {
+    "tagline": "Your Best Educational Advisor",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "contact": "Contact Us",
+    "newsletter": "Newsletter",
+    "newsletterDesc": "Subscribe for updates on scholarships and universities",
+    "subscribe": "Subscribe",
+    "emailPlaceholder": "Your email address",
+    "rights": "All rights reserved",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "ai": {
+    "title": "AI University Assistant",
+    "subtitle": "Ask me anything about Turkish universities",
+    "placeholder": "E.g. I want to study Medicine in Istanbul with a $10,000 budget...",
+    "send": "Send",
+    "typing": "Assistant is typing...",
+    "greeting": "Hello! I'm your AI advisor. Tell me your study goals and budget, and I'll recommend the best Turkish universities and programs for you!"
+  },
+  "whatsapp": "Chat on WhatsApp",
+  "compare": {
+    "title": "Compare Universities",
+    "add": "Add to Compare",
+    "remove": "Remove",
+    "compare": "Compare Now",
+    "max": "Maximum 3 universities can be compared"
+  },
+  "calculator": {
+    "title": "Tuition Cost Calculator",
+    "program": "Select Program",
+    "duration": "Duration",
+    "currency": "Currency",
+    "total": "Total Estimated Cost",
+    "perYear": "Per Year"
+  },
+  "admin": {
+    "dashboard": "Dashboard",
+    "universities": "Universities",
+    "programs": "Programs",
+    "bookings": "Bookings",
+    "leads": "Leads",
+    "blog": "Blog Posts",
+    "testimonials": "Testimonials",
+    "analytics": "Analytics",
+    "settings": "Settings",
+    "totalUniversities": "Total Universities",
+    "totalBookings": "Total Bookings",
+    "totalLeads": "Total Leads",
+    "totalStudents": "Total Students"
+  }
+}
