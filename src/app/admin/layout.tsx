@@ -1,3 +1,6 @@
+import { getServerSession } from 'next-auth'
+import { authOptions } from '@/lib/auth'
+import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import { GraduationCap, Users, Calendar, FileText, BarChart3, MessageSquare, Settings, BookOpen, Home } from 'lucide-react'
@@ -14,12 +17,19 @@ const navItems = [
   { href: '/admin/settings', label: 'Settings', icon: Settings },
 ]
 
-export default function AdminLayout({ children }: { children: React.ReactNode }) {
+export default async function AdminLayout({ children }: { children: React.ReactNode }) {
+  const session = await getServerSession(authOptions)
+  
+  if (!session) redirect('/auth/login')
+  if ((session.user as any).role !== 'ADMIN') redirect('/')
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-navy-950 flex">
       <aside className="w-64 bg-navy-900 flex-shrink-0 flex flex-col">
         <div className="p-5 border-b border-navy-800">
-          <div className="bg-white rounded-xl p-2 inline-block"><Image src="/images/logo.png" alt="Yildiz Foundation" width={120} height={38} className="h-8 w-auto" /></div>
+          <div className="bg-white rounded-xl p-2 inline-block">
+            <Image src="/images/logo.png" alt="Yildiz Foundation" width={120} height={38} className="h-8 w-auto" />
+          </div>
           <div className="text-blue-200 text-xs mt-2">Admin Dashboard</div>
         </div>
         <nav className="flex-1 p-4 space-y-1">
