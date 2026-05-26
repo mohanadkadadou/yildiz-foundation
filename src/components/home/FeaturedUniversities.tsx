@@ -126,7 +126,7 @@ export function FeaturedUniversities({ universities }: Props) {
                 
                 <div className="flex items-center gap-1.5 text-gray-500 dark:text-gray-400 text-sm mb-3">
                   <MapPin className="w-3.5 h-3.5" />
-                  <span>{uni.cityEn || uni.city}</span>
+                  <span>{uni.city}</span>
                 </div>
 
                 <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-2 mb-4">
