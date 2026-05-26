@@ -18,7 +18,7 @@ export function ConsultationCTA() {
                 <Link href="/consultation" className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-white font-bold px-8 py-4 rounded-2xl transition-all duration-200 shadow-lg text-lg">
                   <Calendar className="w-5 h-5" /> Book Free Consultation <ArrowRight className="w-5 h-5" />
                 </Link>
-                <a href="https://wa.me/905000000000" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-bold px-8 py-4 rounded-2xl transition-all border border-white/30 text-lg">
+                <a href="https://wa.me/905395755269" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-bold px-8 py-4 rounded-2xl transition-all border border-white/30 text-lg">
                   <MessageCircle className="w-5 h-5" /> WhatsApp Us
                 </a>
               </div>

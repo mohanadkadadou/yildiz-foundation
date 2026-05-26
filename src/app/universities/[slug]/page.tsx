@@ -100,7 +100,7 @@ export default async function UniversityDetailPage({ params }: { params: Promise
               <h3 className="font-bold text-lg mb-2">Apply Now</h3>
               <p className="text-blue-100 text-sm mb-4">Get expert guidance for your application</p>
               <Link href="/consultation" className="block text-center bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-xl transition-colors mb-3">Book Free Consultation</Link>
-              <a href="https://wa.me/905000000000" target="_blank" rel="noopener noreferrer" className="block text-center bg-white/10 hover:bg-white/20 text-white font-semibold py-3 rounded-xl transition-colors text-sm">WhatsApp Us</a>
+              <a href="https://wa.me/905395755269" target="_blank" rel="noopener noreferrer" className="block text-center bg-white/10 hover:bg-white/20 text-white font-semibold py-3 rounded-xl transition-colors text-sm">WhatsApp Us</a>
             </div>
 
             {uni.scholarships.length > 0 && (
