@@ -16,11 +16,7 @@ export function LanguageSwitcher() {
     const saved = localStorage.getItem('lang')
     if (saved) {
       const lang = languages.find(l => l.code === saved)
-      if (lang) {
-        setCurrent(lang)
-        document.documentElement.lang = lang.code
-        document.documentElement.dir = lang.dir
-      }
+      if (lang) { setCurrent(lang); document.documentElement.lang = lang.code; document.documentElement.dir = lang.dir }
     }
   }, [])
 
