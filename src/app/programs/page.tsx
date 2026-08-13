@@ -57,3 +57,4 @@ export default async function ProgramsPage() {
     </div>
   )
 }
+export const dynamic = 'force-dynamic'
