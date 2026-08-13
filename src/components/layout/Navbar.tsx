@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useTheme } from 'next-themes'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Sun, Moon, GraduationCap } from 'lucide-react'
+import { Menu, X, Sun, Moon, Globe, ChevronDown, GraduationCap } from 'lucide-react'
 import { LanguageSwitcher } from '@/components/shared/LanguageSwitcher'
 import { useSession, signOut } from 'next-auth/react'
 
