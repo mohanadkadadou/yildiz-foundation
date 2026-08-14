@@ -88,7 +88,7 @@ export function UniversitiesClient({ universities, cities }: { universities: Uni
               <motion.div key={uni.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.05 }}
                 className="bg-white dark:bg-navy-900 rounded-2xl overflow-hidden border border-gray-100 dark:border-navy-800 hover:shadow-xl transition-all hover:-translate-y-1 group">
                 <div className="relative h-44 overflow-hidden">
-                  <img src={uniImages[i % uniImages.length]} alt={uni.nameEn} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={uni.coverImageUrl || uniImages[i % uniImages.length]} alt={uni.nameEn} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute top-3 left-3 flex gap-2">
                     <span className={`px-2.5 py-1 rounded-full text-xs font-semibold ${uni.type === 'PUBLIC' ? 'bg-blue-100 text-blue-800' : 'bg-purple-100 text-purple-800'}`}>{uni.type === 'PUBLIC' ? '🏛️ Public' : '🎓 Private'}</span>
