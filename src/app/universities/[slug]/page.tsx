@@ -22,7 +22,7 @@ export default async function UniversityDetailPage({ params }: { params: Promise
   if (!uni) notFound()
 
   const images = [
-    'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1200&q=80',
+    uni.coverImageUrl || 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1200&q=80',
     'https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80',
     'https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=600&q=80',
   ]
