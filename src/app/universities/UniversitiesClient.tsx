@@ -6,7 +6,7 @@ import { Search, MapPin, Star, Users, BookOpen, Heart, ArrowRight, SlidersHorizo
 
 interface University {
   id: string; slug: string; nameEn: string; cityEn: string; type: string; ranking: number | null;
-  descriptionEn: string; totalStudents: number | null; isFeatured: boolean;
+  descriptionEn: string; totalStudents: number | null; isFeatured: boolean; coverImageUrl: string | null;
   programs: Array<{ tuitionFeeUSD: number; degreeType: string }>;
   _count: { programs: number }
 }
