@@ -1,10 +1,13 @@
 // src/app/layout.tsx
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { cookies } from 'next/headers'
 import '../styles/globals.css'
 import { ThemeProvider } from '@/components/shared/ThemeProvider'
 import { SessionProvider } from '@/components/shared/SessionProvider'
+import { LocaleProvider } from '@/components/shared/LocaleProvider'
 import { Toaster } from 'react-hot-toast'
+import { locales, localeConfig, defaultLocale, type Locale } from '@/i18n/config'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -41,8 +44,11 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const cookieLocale = cookies().get('locale')?.value
+  const locale: Locale = locales.includes(cookieLocale as Locale) ? (cookieLocale as Locale) : defaultLocale
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} dir={localeConfig[locale].dir} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -51,8 +57,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={inter.className}>
         <SessionProvider>
           <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange={false}>
-            {children}
-            <Toaster position="top-right" toastOptions={{ duration: 4000, style: { background: '#1e3a8a', color: '#fff' } }} />
+            <LocaleProvider initialLocale={locale}>
+              {children}
+              <Toaster position="top-right" toastOptions={{ duration: 4000, style: { background: '#1e3a8a', color: '#fff' } }} />
+            </LocaleProvider>
           </ThemeProvider>
         </SessionProvider>
       </body>

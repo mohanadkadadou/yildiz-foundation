@@ -4,8 +4,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useTheme } from 'next-themes'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Sun, Moon, Globe, ChevronDown, GraduationCap } from 'lucide-react'
+import { Menu, X, Sun, Moon, GraduationCap } from 'lucide-react'
 import { useSession, signOut } from 'next-auth/react'
+import { LanguageSwitcher } from '@/components/shared/LanguageSwitcher'
 
 const navLinks = [
   { href: '/universities', label: 'Universities' },
@@ -17,17 +18,9 @@ const navLinks = [
   { href: '/contact', label: 'Contact' },
 ]
 
-const languages = [
-  { code: 'en', label: 'English', flag: '🇬🇧' },
-  { code: 'ar', label: 'العربية', flag: '🇸🇦' },
-  { code: 'tr', label: 'Türkçe', flag: '🇹🇷' },
-]
-
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [langOpen, setLangOpen] = useState(false)
-  const [currentLang, setCurrentLang] = useState(languages[0])
   const { theme, setTheme } = useTheme()
   const { data: session } = useSession()
 
@@ -63,29 +56,7 @@ export function Navbar() {
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
-            <div className="relative">
-              <button onClick={() => setLangOpen(!langOpen)}
-                className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium transition-all ${
-                  scrolled ? 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-navy-800' : 'text-white/90 hover:bg-white/10'
-                }`}>
-                <Globe className="w-4 h-4" />
-                <span>{currentLang.flag} {currentLang.label}</span>
-                <ChevronDown className={`w-3 h-3 transition-transform ${langOpen ? 'rotate-180' : ''}`} />
-              </button>
-              <AnimatePresence>
-                {langOpen && (
-                  <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}
-                    className="absolute right-0 top-full mt-1 bg-white dark:bg-navy-800 rounded-xl shadow-xl border border-gray-100 dark:border-navy-700 py-1 min-w-[140px]">
-                    {languages.map((lang) => (
-                      <button key={lang.code} onClick={() => { setCurrentLang(lang); setLangOpen(false) }}
-                        className="w-full flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-navy-700 transition-colors">
-                        <span>{lang.flag}</span><span>{lang.label}</span>
-                      </button>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+            <LanguageSwitcher variant={scrolled ? 'dark' : 'light'} />
 
             <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
               className={`p-2.5 rounded-xl transition-all ${
@@ -143,6 +114,9 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
+              <div className="pt-3 border-t border-gray-100 dark:border-navy-800">
+                <LanguageSwitcher variant="dark" />
+              </div>
               <div className="pt-3 border-t border-gray-100 dark:border-navy-800 flex flex-col gap-2">
                 {session ? (
                   <>
