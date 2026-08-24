@@ -21,6 +21,9 @@ export default async function UniversityDetailPage({ params }: { params: Promise
   })
   if (!uni) notFound()
 
+  const cyprusCities = ['nicosia', 'kyrenia', 'famagusta', 'lefke', 'guzelyurt']
+  const country = cyprusCities.includes(uni.city) ? 'Northern Cyprus' : 'Turkey'
+
   const images = [
     uni.coverImageUrl || 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1200&q=80',
     'https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80',
@@ -38,10 +41,10 @@ export default async function UniversityDetailPage({ params }: { params: Promise
             <div>
               <div className="flex gap-2 mb-3">
                 <span className={`px-3 py-1 rounded-full text-xs font-semibold ${uni.type === 'PUBLIC' ? 'bg-blue-100 text-blue-800' : 'bg-purple-100 text-purple-800'}`}>{uni.type}</span>
-                {uni.ranking && <span className="bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1"><Star className="w-3 h-3 fill-white" />#{uni.ranking} in Turkey</span>}
+                {uni.ranking && <span className="bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1"><Star className="w-3 h-3 fill-white" />#{uni.ranking} in {country}</span>}
               </div>
               <h1 className="text-3xl md:text-5xl font-bold text-white">{uni.nameEn}</h1>
-              <div className="flex items-center gap-2 text-white/80 mt-2"><MapPin className="w-4 h-4" />{uni.cityEn}, Turkey</div>
+              <div className="flex items-center gap-2 text-white/80 mt-2"><MapPin className="w-4 h-4" />{uni.cityEn}, {country}</div>
             </div>
             {uni.website && (
               <a href={uni.website} target="_blank" rel="noopener noreferrer" className="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-4 py-2 rounded-xl flex items-center gap-2 hover:bg-white/20 transition-colors text-sm">
