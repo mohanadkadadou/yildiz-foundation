@@ -3,7 +3,8 @@ import { authOptions } from '@/lib/auth'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
-import { GraduationCap, Users, Calendar, FileText, BarChart3, MessageSquare, Settings, BookOpen, Home } from 'lucide-react'
+import { GraduationCap, Users, Calendar, FileText, BarChart3, MessageSquare, Settings, BookOpen, Home, UserCog, GraduationCap as StudentsIcon } from 'lucide-react'
+import { SignOutButton } from '@/components/admin/SignOutButton'
 
 const navItems = [
   { href: '/admin', label: 'Dashboard', icon: Home },
@@ -11,15 +12,17 @@ const navItems = [
   { href: '/admin/programs', label: 'Programs', icon: BookOpen },
   { href: '/admin/bookings', label: 'Bookings', icon: Calendar },
   { href: '/admin/leads', label: 'Leads', icon: Users },
+  { href: '/admin/students', label: 'Students', icon: StudentsIcon },
   { href: '/admin/blog', label: 'Blog', icon: FileText },
   { href: '/admin/analytics', label: 'Analytics', icon: BarChart3 },
   { href: '/admin/inquiries', label: 'Inquiries', icon: MessageSquare },
+  { href: '/admin/users', label: 'Admin Users', icon: UserCog },
   { href: '/admin/settings', label: 'Settings', icon: Settings },
 ]
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const session = await getServerSession(authOptions)
-  
+
   if (!session) redirect('/auth/login')
   if ((session.user as any).role !== 'ADMIN') redirect('/')
 
@@ -32,15 +35,17 @@ export default async function AdminLayout({ children }: { children: React.ReactN
           </div>
           <div className="text-blue-200 text-xs mt-2">Admin Dashboard</div>
         </div>
-        <nav className="flex-1 p-4 space-y-1">
+        <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
           {navItems.map(item => (
             <Link key={item.href} href={item.href} className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-blue-200 hover:text-white hover:bg-white/10 transition-colors text-sm">
               <item.icon className="w-4 h-4" />{item.label}
             </Link>
           ))}
         </nav>
-        <div className="p-4 border-t border-navy-800">
+        <div className="p-4 border-t border-navy-800 space-y-3">
+          <div className="text-blue-300 text-xs truncate">{session.user?.email}</div>
           <Link href="/" className="flex items-center gap-2 text-blue-300 hover:text-white text-sm transition-colors">← Back to Site</Link>
+          <SignOutButton />
         </div>
       </aside>
       <main className="flex-1 overflow-auto">{children}</main>

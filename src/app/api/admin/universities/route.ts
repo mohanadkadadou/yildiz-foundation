@@ -1,13 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
-import { getServerSession } from 'next-auth'
-import { authOptions } from '@/lib/auth'
+import { requireAdminSession } from '@/lib/admin-auth'
 
 export async function POST(req: NextRequest) {
-  const session = await getServerSession(authOptions)
-  if (!session || (session.user as any).role !== 'ADMIN') {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  }
+  const session = await requireAdminSession()
+  if (!session) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   try {
     const data = await req.json()
@@ -35,6 +32,7 @@ export async function POST(req: NextRequest) {
         totalStudents: data.totalStudents || null,
         internationalStudents: data.internationalStudents || null,
         isFeatured: data.isFeatured || false,
+        isActive: data.isActive ?? true,
         programs: data.programs?.length > 0 ? {
           create: data.programs.map((p: any) => ({
             slug: `${slug}-${p.nameEn.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${Date.now()}`,
