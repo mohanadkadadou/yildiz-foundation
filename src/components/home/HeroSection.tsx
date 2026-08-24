@@ -6,10 +6,12 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useTranslations } from '@/components/shared/LocaleProvider'
 
 export function HeroSection() {
   const [query, setQuery] = useState('')
   const router = useRouter()
+  const { t } = useTranslations()
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
@@ -19,12 +21,12 @@ export function HeroSection() {
   }
 
   const quickLinks = [
-    { label: 'Medicine', href: '/universities?major=medicine', icon: '🏥' },
-    { label: 'Engineering', href: '/universities?major=engineering', icon: '⚙️' },
-    { label: 'Business', href: '/universities?major=business', icon: '📊' },
-    { label: 'Law', href: '/universities?major=law', icon: '⚖️' },
-    { label: 'Architecture', href: '/universities?major=architecture', icon: '🏛️' },
-    { label: 'Computer Science', href: '/universities?major=cs', icon: '💻' },
+    { key: 'medicine', href: '/universities?major=medicine', icon: '🏥' },
+    { key: 'engineering', href: '/universities?major=engineering', icon: '⚙️' },
+    { key: 'business', href: '/universities?major=business', icon: '📊' },
+    { key: 'law', href: '/universities?major=law', icon: '⚖️' },
+    { key: 'architecture', href: '/universities?major=architecture', icon: '🏛️' },
+    { key: 'cs', href: '/universities?major=cs', icon: '💻' },
   ]
 
   const floatingCards = [
@@ -61,7 +63,7 @@ export function HeroSection() {
             <div>
               <div className="text-white font-semibold text-sm">Istanbul University</div>
               <div className="text-gold-400 text-xs flex items-center gap-1">
-                <Star className="w-3 h-3 fill-current" /> #1 in Turkey
+                <Star className="w-3 h-3 fill-current" /> {t('hero.floating.rank')}
               </div>
             </div>
           </div>
@@ -74,7 +76,7 @@ export function HeroSection() {
           className="absolute top-[25%] right-[3%] bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20 shadow-2xl"
         >
           <div className="text-white font-bold text-2xl">2,500+</div>
-          <div className="text-blue-200 text-xs">Students Placed</div>
+          <div className="text-blue-200 text-xs">{t('hero.floating.studentsPlaced')}</div>
         </motion.div>
 
         <motion.div
@@ -83,8 +85,8 @@ export function HeroSection() {
           transition={{ delay: 1.2, duration: 0.6 }}
           className="absolute bottom-[25%] left-[5%] bg-gradient-to-br from-gold-500/20 to-gold-600/20 backdrop-blur-md rounded-2xl p-4 border border-gold-400/30 shadow-2xl"
         >
-          <div className="text-gold-400 font-bold text-lg">Up to 75%</div>
-          <div className="text-white text-xs">Scholarship Available</div>
+          <div className="text-gold-400 font-bold text-lg">{t('hero.floating.scholarshipUpTo')}</div>
+          <div className="text-white text-xs">{t('hero.floating.scholarshipAvailable')}</div>
         </motion.div>
       </div>
 
@@ -109,7 +111,7 @@ export function HeroSection() {
             className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-full px-5 py-2 text-sm font-medium mb-6"
           >
             <span className="w-2 h-2 rounded-full bg-gold-400 animate-pulse" />
-            Turkey&apos;s #1 Educational Consultancy
+            {t('hero.badge')}
           </motion.div>
 
           {/* Main heading */}
@@ -119,9 +121,9 @@ export function HeroSection() {
             transition={{ delay: 0.2 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
           >
-            Your Gateway to{' '}
+            {t('hero.title')}{' '}
             <span className="relative">
-              <span className="text-gold-400">Turkish Universities</span>
+              <span className="text-gold-400">{t('hero.titleHighlight')}</span>
               <motion.div
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
@@ -138,7 +140,7 @@ export function HeroSection() {
             transition={{ delay: 0.3 }}
             className="text-xl md:text-2xl text-blue-100 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            Discover top universities, compare programs, and get expert guidance to start your academic journey in Turkey.
+            {t('hero.subtitle')}
           </motion.p>
 
           {/* Search bar */}
@@ -155,14 +157,14 @@ export function HeroSection() {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search universities, programs, cities..."
+                placeholder={t('hero.searchPlaceholder')}
                 className="flex-1 px-4 py-5 text-gray-800 dark:text-white bg-transparent outline-none text-lg placeholder:text-gray-400"
               />
               <button
                 type="submit"
                 className="m-2 bg-gradient-to-r from-navy-700 to-navy-800 hover:from-navy-800 hover:to-navy-900 text-white font-semibold px-8 py-3 rounded-xl transition-all duration-200 flex items-center gap-2"
               >
-                Search
+                {t('hero.searchBtn')}
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
@@ -175,15 +177,15 @@ export function HeroSection() {
             transition={{ delay: 0.5 }}
             className="flex flex-wrap justify-center gap-3 mb-12"
           >
-            <span className="text-blue-200 text-sm py-2">Popular:</span>
-            {quickLinks.map((link, i) => (
+            <span className="text-blue-200 text-sm py-2">{t('hero.popular')}</span>
+            {quickLinks.map((link) => (
               <Link
-                key={link.label}
+                key={link.key}
                 href={link.href}
                 className="flex items-center gap-1.5 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 border border-white/10 hover:border-white/30"
               >
                 <span>{link.icon}</span>
-                {link.label}
+                {t(`hero.quickLinks.${link.key}`)}
               </Link>
             ))}
           </motion.div>
@@ -200,14 +202,14 @@ export function HeroSection() {
               className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-white font-bold px-8 py-4 rounded-2xl transition-all duration-200 shadow-lg hover:shadow-gold-500/30 hover:shadow-xl text-lg"
             >
               <GraduationCap className="w-5 h-5" />
-              Explore Universities
+              {t('hero.exploreUniversities')}
             </Link>
             <Link
               href="/consultation"
               className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-bold px-8 py-4 rounded-2xl transition-all duration-200 border border-white/30 hover:border-white/50 text-lg"
             >
               <MapPin className="w-5 h-5" />
-              Free Consultation
+              {t('hero.freeConsultation')}
             </Link>
           </motion.div>
         </div>

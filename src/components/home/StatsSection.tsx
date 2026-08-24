@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 import { GraduationCap, Users, Globe, Award } from 'lucide-react'
+import { useTranslations } from '@/components/shared/LocaleProvider'
 
 interface Props {
   stats: { universities: number; programs: number; students: number; countries: number }
@@ -36,11 +37,12 @@ function Counter({ end, duration = 2 }: { end: number; duration?: number }) {
 }
 
 export function StatsSection({ stats }: Props) {
+  const { t } = useTranslations()
   const items = [
-    { icon: GraduationCap, label: 'Universities', value: stats.universities, suffix: '+', color: 'text-blue-500' },
-    { icon: Users, label: 'Students Helped', value: stats.students, suffix: '+', color: 'text-gold-500' },
-    { icon: Globe, label: 'Countries', value: stats.countries, suffix: '+', color: 'text-emerald-500' },
-    { icon: Award, label: 'Success Rate', value: 97, suffix: '%', color: 'text-purple-500' },
+    { icon: GraduationCap, label: t('hero.stats.universities'), value: stats.universities, suffix: '+', color: 'text-blue-500' },
+    { icon: Users, label: t('hero.stats.students'), value: stats.students, suffix: '+', color: 'text-gold-500' },
+    { icon: Globe, label: t('hero.stats.countries'), value: stats.countries, suffix: '+', color: 'text-emerald-500' },
+    { icon: Award, label: t('hero.stats.successRate'), value: 97, suffix: '%', color: 'text-purple-500' },
   ]
 
   return (

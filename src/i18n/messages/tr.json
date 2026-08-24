@@ -5,6 +5,8 @@
     "programs": "Programlar",
     "blog": "Blog",
     "about": "Hakkımızda",
+    "album": "Albüm",
+    "socialMedia": "Sosyal Medya",
     "contact": "İletişim",
     "bookConsultation": "Danışmanlık Al",
     "login": "Giriş Yap",
@@ -24,7 +26,12 @@
       "students": "Yardım Edilen Öğrenci",
       "countries": "Ülke",
       "successRate": "Başarı Oranı"
-    }
+    },
+    "popular": "Popüler:",
+    "exploreUniversities": "Üniversiteleri Keşfet",
+    "freeConsultation": "Ücretsiz Danışmanlık",
+    "quickLinks": { "medicine": "Tıp", "engineering": "Mühendislik", "business": "İşletme", "law": "Hukuk", "architecture": "Mimarlık", "cs": "Bilgisayar Mühendisliği" },
+    "floating": { "rank": "Türkiye'de #1", "studentsPlaced": "Yerleştirilen Öğrenci", "scholarshipUpTo": "%75'e Varan", "scholarshipAvailable": "Burs Mevcut" }
   },
   "search": {
     "title": "Mükemmel Üniversitenizi Bulun",
@@ -42,6 +49,9 @@
     "clearFilters": "Filtreleri Temizle"
   },
   "universities": {
+    "eyebrow": "Önde Gelen Kurumlar",
+    "featuredSubtitle": "Dünya standartlarında eğitim sunan Türkiye'nin en prestijli kurumlarını keşfedin",
+    "inTurkey": "Türkiye'de",
     "featured": "Öne Çıkan Üniversiteler",
     "all": "Tüm Üniversiteler",
     "viewAll": "Tüm Üniversiteleri Gör",
@@ -57,6 +67,9 @@
     "apply": "Şimdi Başvur"
   },
   "programs": {
+    "eyebrow": "Öne Çıkan Programlar",
+    "popularSubtitle": "Türk üniversitelerindeki en çok tercih edilen lisans programlarını keşfedin",
+    "details": "Detaylar",
     "popular": "Popüler Programlar",
     "all": "Tüm Programlar",
     "bachelor": "Lisans",
@@ -71,6 +84,7 @@
     "viewAll": "Tüm Programları Gör"
   },
   "whyTurkey": {
+    "eyebrow": "Neden Türkiye",
     "title": "Neden Türkiye'de Okuyalım?",
     "subtitle": "Türkiye, zengin kültür ve uygun yaşam maliyetiyle dünya standartlarında eğitim sunuyor",
     "reasons": {
@@ -101,9 +115,12 @@
     }
   },
   "consultation": {
+    "eyebrow": "Ücretsiz Danışmanlık",
     "title": "Yolculuğunuza Bugün Başlayın",
-    "subtitle": "Uzman danışmanlarımızla ücretsiz danışmanlık alın",
+    "subtitle": "Uzman danışmanlarımızdan kişiselleştirilmiş rehberlik alın. Hedeflerinize ve bütçenize uygun mükemmel üniversite ve programı bulmanıza yardımcı olacağız.",
     "bookBtn": "Ücretsiz Danışmanlık Al",
+    "whatsappUs": "WhatsApp'tan Yazın",
+    "features": ["Ücretsiz Danışmanlık", "24 Saatte Yanıt", "Uzman Danışmanlar", "Burs Desteği"],
     "form": {
       "firstName": "Ad",
       "lastName": "Soyad",
@@ -122,10 +139,12 @@
     }
   },
   "testimonials": {
+    "eyebrow": "Başarı Hikayeleri",
     "title": "Öğrenci Başarı Hikayeleri",
-    "subtitle": "Hayallerini gerçekleştirmelerine yardımcı olduğumuz öğrencilerden dinleyin"
+    "subtitle": "Türkiye'de okuma hayallerini gerçekleştirmelerine yardımcı olduğumuz öğrencilerden dinleyin"
   },
   "blog": {
+    "eyebrow": "Son Haberler",
     "title": "Eğitim İçgörüleri",
     "subtitle": "Türkiye'de okumak hakkında rehberler, ipuçları ve haberler",
     "readMore": "Devamını Oku",
@@ -133,10 +152,19 @@
   },
   "faq": {
     "title": "Sıkça Sorulan Sorular",
-    "subtitle": "Türkiye'de okumak hakkında bilmeniz gereken her şey"
+    "subtitle": "Türkiye'de okumak hakkında bilmeniz gereken her şey",
+    "items": [
+      { "q": "Türkiye'de okumak ne kadar tutuyor?", "a": "Türkiye'deki öğrenim ücretleri üniversiteye ve programa bağlı olarak yılda 3.000 ile 15.000 dolar arasında değişmektedir. Devlet üniversiteleri genellikle daha uygun fiyatlıdır, özel üniversiteler ise maliyetleri azaltmak için burslar sunabilir." },
+      { "q": "Türkiye'de İngilizce eğitim alabilir miyim?", "a": "Evet! Boğaziçi, ODTÜ, Koç, Sabancı ve Bilkent gibi birçok önde gelen Türk üniversitesi tam İngilizce eğitim programları sunmaktadır. Danışmanlarımız size uygun İngilizce programı bulmanıza yardımcı olabilir." },
+      { "q": "Uluslararası öğrenciler için hangi burslar mevcut?", "a": "Türkiye; öğrenim ücreti, konaklama ve harçlığı kapsayan devlet destekli Türkiye Bursları ile %25 ila %100 arasında değişen üniversiteye özgü burslar sunmaktadır." },
+      { "q": "Başvuru süreci ne kadar sürer?", "a": "Başvuru süreci genellikle 4-8 hafta sürer. Yıldız Vakfı'nın rehberliğiyle süreci kolaylaştırıyor ve gerekli tüm belgeleri hazırlamanıza yardımcı oluyoruz." },
+      { "q": "Türkiye'de okumak için Türkçe öğrenmem gerekir mi?", "a": "Zorunlu değildir. İngilizce eğitim veren bir program seçerseniz Türkçe bilmeden okuyabilirsiniz. Ancak temel düzeyde Türkçe öğrenmek günlük yaşam deneyiminizi önemli ölçüde iyileştirecektir." },
+      { "q": "Türkiye öğrenci vizesi süreci nasıl işliyor?", "a": "Kabul mektubunuzu aldıktan sonra en yakın Türk konsolosluğundan öğrenci vizesi başvurusu yaparsınız. Süreç genellikle 2-4 hafta sürer. Ekibimiz vize başvurusu boyunca tam destek sağlar." }
+    ]
   },
   "footer": {
     "tagline": "En İyi Eğitim Danışmanınız",
+    "taglineDesc": "Türk üniversiteleri için en iyi eğitim danışmanınız. 2015'ten beri uluslararası öğrencilerin akademik hayallerine ulaşmalarına yardımcı oluyoruz.",
     "quickLinks": "Hızlı Bağlantılar",
     "services": "Hizmetlerimiz",
     "contact": "Bize Ulaşın",
@@ -146,7 +174,19 @@
     "emailPlaceholder": "E-posta adresiniz",
     "rights": "Tüm hakları saklıdır",
     "privacy": "Gizlilik Politikası",
-    "terms": "Hizmet Şartları"
+    "terms": "Hizmet Şartları",
+    "links": {
+      "universities": "Üniversiteler",
+      "governmentUniversities": "Devlet Üniversiteleri",
+      "programs": "Programlar",
+      "scholarships": "Burslar",
+      "blog": "Blog",
+      "aboutUs": "Hakkımızda",
+      "album": "Yıldız Albümü",
+      "socialMedia": "Sosyal Medya"
+    },
+    "servicesItems": ["Üniversite Seçimi", "Başvuru Desteği", "Vize Desteği", "Burs Danışmanlığı", "Havalimanı Karşılama", "Konaklama Desteği"],
+    "address": "İstanbul, Türkiye"
   },
   "ai": {
     "title": "Yapay Zeka Üniversite Asistanı",

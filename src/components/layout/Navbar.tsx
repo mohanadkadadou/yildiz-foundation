@@ -7,15 +7,16 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Sun, Moon, GraduationCap } from 'lucide-react'
 import { useSession, signOut } from 'next-auth/react'
 import { LanguageSwitcher } from '@/components/shared/LanguageSwitcher'
+import { useTranslations } from '@/components/shared/LocaleProvider'
 
 const navLinks = [
-  { href: '/universities', label: 'Universities' },
-  { href: '/programs', label: 'Programs' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/about', label: 'About' },
-  { href: '/album', label: 'Album' },
-  { href: '/social-media', label: 'Social Media' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/universities', key: 'universities' },
+  { href: '/programs', key: 'programs' },
+  { href: '/blog', key: 'blog' },
+  { href: '/about', key: 'about' },
+  { href: '/album', key: 'album' },
+  { href: '/social-media', key: 'socialMedia' },
+  { href: '/contact', key: 'contact' },
 ]
 
 export function Navbar() {
@@ -23,6 +24,7 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const { theme, setTheme } = useTheme()
   const { data: session } = useSession()
+  const { t } = useTranslations()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -50,7 +52,7 @@ export function Navbar() {
                 className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
                   scrolled ? 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-navy-800' : 'text-white/90 hover:text-white hover:bg-white/10'
                 }`}>
-                {link.label}
+                {t(`nav.${link.key}`)}
               </Link>
             ))}
           </div>
@@ -70,11 +72,11 @@ export function Navbar() {
                 <Link href="/admin" className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
                   scrolled ? 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-navy-800' : 'text-white hover:bg-white/10'
                 }`}>
-                  Dashboard
+                  {t('nav.dashboard')}
                 </Link>
                 <button onClick={() => signOut()}
                   className="px-4 py-2 rounded-xl text-sm font-medium text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all">
-                  Logout
+                  {t('nav.logout')}
                 </button>
               </div>
             ) : (
@@ -83,12 +85,12 @@ export function Navbar() {
                   className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
                     scrolled ? 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-navy-800' : 'text-white hover:bg-white/10'
                   }`}>
-                  Login
+                  {t('nav.login')}
                 </Link>
                 <Link href="/consultation"
                   className="flex items-center gap-2 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-white font-semibold px-5 py-2.5 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg text-sm">
                   <GraduationCap className="w-4 h-4" />
-                  Book Consultation
+                  {t('nav.bookConsultation')}
                 </Link>
               </>
             )}
@@ -111,7 +113,7 @@ export function Navbar() {
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)}
                   className="block px-4 py-3 rounded-xl text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-navy-800 font-medium transition-colors">
-                  {link.label}
+                  {t(`nav.${link.key}`)}
                 </Link>
               ))}
               <div className="pt-3 border-t border-gray-100 dark:border-navy-800">
@@ -122,22 +124,22 @@ export function Navbar() {
                   <>
                     <Link href="/admin" onClick={() => setIsOpen(false)}
                       className="block text-center px-4 py-3 rounded-xl border border-navy-200 text-navy-800 dark:text-white font-medium">
-                      Dashboard
+                      {t('nav.dashboard')}
                     </Link>
                     <button onClick={() => signOut()}
                       className="block w-full text-center px-4 py-3 rounded-xl bg-red-50 text-red-500 font-medium">
-                      Logout
+                      {t('nav.logout')}
                     </button>
                   </>
                 ) : (
                   <>
                     <Link href="/auth/login" onClick={() => setIsOpen(false)}
                       className="block text-center px-4 py-3 rounded-xl border border-navy-200 text-navy-800 dark:text-white font-medium">
-                      Login
+                      {t('nav.login')}
                     </Link>
                     <Link href="/consultation" onClick={() => setIsOpen(false)}
                       className="block text-center px-4 py-3 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 text-white font-semibold">
-                      Book Consultation
+                      {t('nav.bookConsultation')}
                     </Link>
                   </>
                 )}

@@ -4,15 +4,24 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { MapPin, Users, Star, BookOpen, ArrowRight, Heart } from 'lucide-react'
 import { useState } from 'react'
+import { useTranslations } from '@/components/shared/LocaleProvider'
+import { localize } from '@/lib/locale-helpers'
 
 interface University {
   id: string
   slug: string
   nameEn: string
+  nameAr: string
+  nameTr: string
   city: string
+  cityEn: string
+  cityAr: string
+  cityTr: string
   type: string
   ranking: number | null
   descriptionEn: string
+  descriptionAr: string
+  descriptionTr: string
   programs: Array<{ tuitionFeeUSD: number }>
   totalStudents: number | null
   isFeatured: boolean
@@ -24,6 +33,7 @@ interface Props {
 
 export function FeaturedUniversities({ universities }: Props) {
   const [favorites, setFavorites] = useState<Set<string>>(new Set())
+  const { t, locale } = useTranslations()
 
   const toggleFavorite = (id: string) => {
     setFavorites(prev => {
@@ -60,13 +70,13 @@ export function FeaturedUniversities({ universities }: Props) {
           className="text-center mb-12"
         >
           <span className="inline-block text-gold-600 font-semibold text-sm uppercase tracking-wider mb-3">
-            Top Institutions
+            {t('universities.eyebrow')}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-navy-900 dark:text-white mb-4">
-            Featured Universities
+            {t('universities.featured')}
           </h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-lg">
-            Discover Turkey&apos;s most prestigious institutions offering world-class education
+            {t('universities.featuredSubtitle')}
           </p>
         </motion.div>
 
@@ -97,7 +107,7 @@ export function FeaturedUniversities({ universities }: Props) {
                       ? 'bg-blue-100 text-blue-800'
                       : 'bg-purple-100 text-purple-800'
                   }`}>
-                    {uni.type === 'PUBLIC' ? 'Public' : 'Private'}
+                    {uni.type === 'PUBLIC' ? t('universities.public') : t('universities.private')}
                   </span>
                 </div>
 
@@ -113,7 +123,7 @@ export function FeaturedUniversities({ universities }: Props) {
                 {uni.ranking && (
                   <div className="absolute bottom-3 left-3 flex items-center gap-1 bg-gold-500/90 backdrop-blur-sm text-white text-xs font-bold px-2.5 py-1 rounded-full">
                     <Star className="w-3 h-3 fill-white" />
-                    #{uni.ranking} in Turkey
+                    #{uni.ranking} {t('universities.inTurkey')}
                   </div>
                 )}
               </div>
@@ -121,28 +131,28 @@ export function FeaturedUniversities({ universities }: Props) {
               {/* Card body */}
               <div className="p-5">
                 <h3 className="font-bold text-navy-900 dark:text-white text-lg mb-2 group-hover:text-navy-700 dark:group-hover:text-blue-300 transition-colors line-clamp-1">
-                  {uni.nameEn}
+                  {localize(uni, 'name', locale)}
                 </h3>
-                
+
                 <div className="flex items-center gap-1.5 text-gray-500 dark:text-gray-400 text-sm mb-3">
                   <MapPin className="w-3.5 h-3.5" />
-                  <span>{uni.city}</span>
+                  <span>{localize(uni, 'city', locale)}</span>
                 </div>
 
                 <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-2 mb-4">
-                  {uni.descriptionEn}
+                  {localize(uni, 'description', locale)}
                 </p>
 
                 {/* Stats */}
                 <div className="flex items-center justify-between text-sm mb-4">
                   <div className="flex items-center gap-1.5 text-gray-600 dark:text-gray-300">
                     <BookOpen className="w-4 h-4 text-navy-600 dark:text-blue-400" />
-                    <span>{uni.programs.length} Programs</span>
+                    <span>{uni.programs.length} {t('universities.programs')}</span>
                   </div>
                   {uni.totalStudents && (
                     <div className="flex items-center gap-1.5 text-gray-600 dark:text-gray-300">
                       <Users className="w-4 h-4 text-navy-600 dark:text-blue-400" />
-                      <span>{(uni.totalStudents / 1000).toFixed(0)}k Students</span>
+                      <span>{(uni.totalStudents / 1000).toFixed(0)}k {t('universities.students')}</span>
                     </div>
                   )}
                 </div>
@@ -152,7 +162,7 @@ export function FeaturedUniversities({ universities }: Props) {
                   <div>
                     {minFee(uni.programs) && (
                       <>
-                        <span className="text-xs text-gray-400">From</span>
+                        <span className="text-xs text-gray-400">{t('universities.tuition')}</span>
                         <div className="text-lg font-bold text-navy-900 dark:text-white">
                           ${minFee(uni.programs)?.toLocaleString()}<span className="text-sm font-normal text-gray-400">/yr</span>
                         </div>
@@ -163,7 +173,7 @@ export function FeaturedUniversities({ universities }: Props) {
                     href={`/universities/${uni.slug}`}
                     className="flex items-center gap-1.5 bg-navy-800 hover:bg-navy-900 text-white text-sm font-semibold px-4 py-2 rounded-xl transition-all duration-200"
                   >
-                    View Details
+                    {t('universities.viewDetails')}
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
@@ -178,7 +188,7 @@ export function FeaturedUniversities({ universities }: Props) {
             href="/universities"
             className="inline-flex items-center gap-2 border-2 border-navy-800 dark:border-blue-400 text-navy-800 dark:text-blue-400 hover:bg-navy-800 hover:text-white dark:hover:bg-blue-400 dark:hover:text-navy-900 font-semibold px-8 py-3.5 rounded-xl transition-all duration-200"
           >
-            View All Universities
+            {t('universities.viewAll')}
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

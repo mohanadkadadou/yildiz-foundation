@@ -11,6 +11,7 @@ interface LocaleContextValue {
   locale: Locale
   setLocale: (locale: Locale) => void
   t: (key: string) => string
+  tArray: <T = string>(key: string) => T[]
 }
 
 const LocaleContext = createContext<LocaleContextValue | null>(null)
@@ -42,7 +43,12 @@ export function LocaleProvider({ children, initialLocale }: { children: React.Re
     return typeof value === 'string' ? value : key
   }, [locale])
 
-  return <LocaleContext.Provider value={{ locale, setLocale, t }}>{children}</LocaleContext.Provider>
+  const tArray = useCallback(<T,>(key: string) => {
+    const value = getByPath(messages[locale], key) ?? getByPath(messages.en, key)
+    return (Array.isArray(value) ? value : []) as T[]
+  }, [locale])
+
+  return <LocaleContext.Provider value={{ locale, setLocale, t, tArray }}>{children}</LocaleContext.Provider>
 }
 
 export function useLocale() {
@@ -52,6 +58,6 @@ export function useLocale() {
 }
 
 export function useTranslations() {
-  const { t } = useLocale()
-  return { t }
+  const { t, tArray, locale } = useLocale()
+  return { t, tArray, locale }
 }
