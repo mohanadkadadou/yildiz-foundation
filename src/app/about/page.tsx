@@ -2,6 +2,20 @@ import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { Award, Users, Globe, Heart } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
+
+const certificates = [
+  { src: '/images/certificates/yildiz-plaque.jpeg', title: 'Yildiz Foundation', subtitle: 'Commemorative Plaque' },
+  { src: '/images/certificates/beruni-university.jpeg', title: 'Beruni University', subtitle: 'Certificate of Appreciation' },
+  { src: '/images/certificates/istinye-university.jpeg', title: 'İstinye University', subtitle: 'Certificate of Appreciation' },
+]
+
+const team = [
+  { src: '/images/team/ammar-yildiz.jpeg', name: 'Dr. Ammar Yıldız', role: 'Executive Director' },
+  { src: '/images/team/obeida-yildiz.jpeg', name: 'Dr. Obeida Yıldız', role: 'General Manager' },
+  { src: '/images/team/mustafa-mohammed.jpeg', name: 'Mustafa Mohammed', role: 'Student Registrar' },
+  { src: '/images/team/khaled-almajdi.jpeg', name: 'Khaled Al-Majdi', role: 'Student Registrar' },
+]
 
 export default function AboutPage() {
   return (
@@ -39,6 +53,52 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
+          <div className="mb-20">
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center gap-2 text-gold-500 mb-2">
+                <Award className="w-5 h-5" />
+                <span className="font-semibold text-sm">Recognition</span>
+              </div>
+              <h2 className="section-title mb-3">Certificates & Accreditations</h2>
+              <p className="section-subtitle">Trusted and recognized by our partner universities</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {certificates.map((cert) => (
+                <div key={cert.src} className="uni-card">
+                  <div className="relative w-full aspect-[4/3] bg-gray-100 dark:bg-navy-800">
+                    <Image src={cert.src} alt={cert.title} fill className="object-cover" />
+                  </div>
+                  <div className="p-4 text-center">
+                    <h3 className="font-bold text-navy-900 dark:text-white">{cert.title}</h3>
+                    <p className="text-gray-500 dark:text-gray-400 text-sm">{cert.subtitle}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mb-20">
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center gap-2 text-gold-500 mb-2">
+                <Users className="w-5 h-5" />
+                <span className="font-semibold text-sm">Our Team</span>
+              </div>
+              <h2 className="section-title mb-3">Meet the Team</h2>
+              <p className="section-subtitle">A team of specialists guiding you through every step of your academic journey</p>
+            </div>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+              {team.map((member) => (
+                <div key={member.src} className="uni-card text-center p-5">
+                  <div className="relative w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden border-4 border-gold-500/20">
+                    <Image src={member.src} alt={member.name} fill className="object-cover" />
+                  </div>
+                  <h3 className="font-bold text-navy-900 dark:text-white">{member.name}</h3>
+                  <p className="text-gold-500 text-sm font-medium">{member.role}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div className="bg-gradient-to-br from-navy-900 to-navy-800 rounded-3xl p-10 text-center">
             <h2 className="text-3xl font-bold text-white mb-4">Our Mission</h2>
             <p className="text-blue-100 text-lg max-w-3xl mx-auto mb-8">To make quality Turkish higher education accessible to every international student by providing expert guidance, transparent information, and unwavering support throughout their educational journey.</p>
