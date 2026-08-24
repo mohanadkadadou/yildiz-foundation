@@ -13,6 +13,11 @@ const certificates = [
 const team = [
   { src: '/images/team/ammar-yildiz.jpeg', name: 'Dr. Ammar Yıldız', role: 'Executive Director' },
   { src: '/images/team/obeida-yildiz.jpeg', name: 'Dr. Obeida Yıldız', role: 'General Manager' },
+  { src: '/images/team/abdullah-almasri.jpeg', name: 'Dr. Abdullah Al-Masri', role: 'Public Relations Officer' },
+  { src: '/images/team/mazen-bayazid.jpeg', name: 'Mazen Bayazid', role: 'Student Affairs Officer' },
+  { src: '/images/team/yousef-abouras.jpeg', name: 'Yousef Abu Ras', role: 'Educational Consultant' },
+  { src: null, name: 'Deniz Hoca', role: 'Educational Consultant' },
+  { src: null, name: 'Layan Bahar', role: 'Educational Consultant' },
   { src: '/images/team/mustafa-mohammed.jpeg', name: 'Mustafa Mohammed', role: 'Student Registrar' },
   { src: '/images/team/khaled-almajdi.jpeg', name: 'Khaled Al-Majdi', role: 'Student Registrar' },
 ]
@@ -88,9 +93,15 @@ export default function AboutPage() {
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               {team.map((member) => (
-                <div key={member.src} className="uni-card text-center p-5">
+                <div key={member.name} className="uni-card text-center p-5">
                   <div className="relative w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden border-4 border-gold-500/20">
-                    <Image src={member.src} alt={member.name} fill className="object-cover" />
+                    {member.src ? (
+                      <Image src={member.src} alt={member.name} fill className="object-cover" />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-navy-100 dark:bg-navy-800 text-navy-800 dark:text-white text-2xl font-bold">
+                        {member.name.split(' ').map(w => w[0]).slice(0, 2).join('')}
+                      </div>
+                    )}
                   </div>
                   <h3 className="font-bold text-navy-900 dark:text-white">{member.name}</h3>
                   <p className="text-gold-500 text-sm font-medium">{member.role}</p>
