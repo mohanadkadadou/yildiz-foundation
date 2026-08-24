@@ -1,5 +1,6 @@
 'use client'
 import { createContext, useCallback, useContext, useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { localeConfig, type Locale } from '@/i18n/config'
 import en from '@/i18n/messages/en.json'
 import ar from '@/i18n/messages/ar.json'
@@ -22,11 +23,18 @@ function getByPath(obj: any, path: string): unknown {
 
 export function LocaleProvider({ children, initialLocale }: { children: React.ReactNode; initialLocale: Locale }) {
   const [locale, setLocaleState] = useState<Locale>(initialLocale)
+  const pathname = usePathname()
+  const isAdmin = pathname?.startsWith('/admin')
 
   useEffect(() => {
+    if (isAdmin) {
+      document.documentElement.lang = 'en'
+      document.documentElement.dir = 'ltr'
+      return
+    }
     document.documentElement.lang = locale
     document.documentElement.dir = localeConfig[locale].dir
-  }, [locale])
+  }, [locale, isAdmin])
 
   const setLocale = useCallback((next: Locale) => {
     setLocaleState(next)
