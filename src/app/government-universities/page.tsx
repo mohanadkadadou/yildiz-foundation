@@ -24,9 +24,7 @@ export default async function GovernmentUniversitiesPage() {
       <UniversitiesClient
         universities={universities}
         cities={cities}
-        title="Government Universities in Turkey"
-        subtitlePrefix="Browse "
-        subtitleSuffix="+ accredited state universities across Turkey"
+        variant="government"
         hideTypeFilter
       />
       <Footer />

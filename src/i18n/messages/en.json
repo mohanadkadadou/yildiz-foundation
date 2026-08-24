@@ -30,8 +30,20 @@
     "popular": "Popular:",
     "exploreUniversities": "Explore Universities",
     "freeConsultation": "Free Consultation",
-    "quickLinks": { "medicine": "Medicine", "engineering": "Engineering", "business": "Business", "law": "Law", "architecture": "Architecture", "cs": "Computer Science" },
-    "floating": { "rank": "#1 in Turkey", "studentsPlaced": "Students Placed", "scholarshipUpTo": "Up to 75%", "scholarshipAvailable": "Scholarship Available" }
+    "quickLinks": {
+      "medicine": "Medicine",
+      "engineering": "Engineering",
+      "business": "Business",
+      "law": "Law",
+      "architecture": "Architecture",
+      "cs": "Computer Science"
+    },
+    "floating": {
+      "rank": "#1 in Turkey",
+      "studentsPlaced": "Students Placed",
+      "scholarshipUpTo": "Up to 75%",
+      "scholarshipAvailable": "Scholarship Available"
+    }
   },
   "search": {
     "title": "Find Your Perfect University",
@@ -64,7 +76,31 @@
     "students": "Students",
     "compare": "Compare",
     "favorite": "Add to Favorites",
-    "apply": "Apply Now"
+    "apply": "Apply Now",
+    "searchPlaceholder": "Search universities...",
+    "filters": "Filters",
+    "allCities": "All Cities",
+    "allTypes": "All Types",
+    "maxFee": "Max Fee",
+    "found": "universities found",
+    "clearFilters": "Clear Filters",
+    "notFound": "University Not Found",
+    "about": "About",
+    "founded": "Founded",
+    "program": "Program",
+    "availablePrograms": "Available Programs",
+    "admissionRequirements": "Admission Requirements",
+    "getGuidance": "Get expert guidance for your application",
+    "scholarships": "Scholarships",
+    "turkey": "Turkey",
+    "northernCyprus": "Northern Cyprus",
+    "rankingSuffix": "in",
+    "visitWebsite": "Visit Website",
+    "governmentTitle": "Government Universities in Turkey",
+    "governmentSubtitlePrefix": "Browse ",
+    "governmentSubtitleSuffix": "+ accredited state universities across Turkey",
+    "subtitlePrefix": "Find your perfect university from ",
+    "subtitleSuffix": "+ institutions"
   },
   "programs": {
     "eyebrow": "Top Programs",
@@ -81,7 +117,10 @@
     "language": "Language",
     "tuition": "Tuition / Year",
     "careers": "Career Opportunities",
-    "viewAll": "View All Programs"
+    "viewAll": "View All Programs",
+    "degree": "Degree",
+    "browsePrefix": "Browse ",
+    "browseSuffix": "+ programs across Turkish universities"
   },
   "whyTurkey": {
     "eyebrow": "Why Turkey",
@@ -120,7 +159,12 @@
     "subtitle": "Get personalized guidance from our expert consultants. We'll help you find the perfect university and program that matches your goals and budget.",
     "bookBtn": "Book Free Consultation",
     "whatsappUs": "WhatsApp Us",
-    "features": ["Free Consultation", "24hr Response", "Expert Advisors", "Scholarship Help"],
+    "features": [
+      "Free Consultation",
+      "24hr Response",
+      "Expert Advisors",
+      "Scholarship Help"
+    ],
     "form": {
       "firstName": "First Name",
       "lastName": "Last Name",
@@ -148,18 +192,38 @@
     "title": "Education Insights",
     "subtitle": "Guides, tips, and news about studying in Turkey",
     "readMore": "Read More",
-    "viewAll": "View All Articles"
+    "viewAll": "View All Articles",
+    "pageTitle": "Education Blog",
+    "noPosts": "No blog posts yet. Check back soon!"
   },
   "faq": {
     "title": "Frequently Asked Questions",
     "subtitle": "Everything you need to know about studying in Turkey",
     "items": [
-      { "q": "How much does it cost to study in Turkey?", "a": "Tuition fees in Turkey range from $3,000 to $15,000 per year depending on the university and program. Public universities are generally more affordable, while private universities may offer scholarships to reduce costs." },
-      { "q": "Can I study in English in Turkey?", "a": "Yes! Many top Turkish universities offer full English-medium programs, including Boğaziçi, METU, Koç, Sabancı, and Bilkent universities. Our consultants can help you find the right English-taught program." },
-      { "q": "What scholarships are available for international students?", "a": "Turkey offers excellent scholarships including the government-funded Türkiye Bursları (covers tuition + accommodation + stipend), and university-specific scholarships ranging from 25% to 100% tuition discounts." },
-      { "q": "How long does the application process take?", "a": "The application process typically takes 4-8 weeks. With Yildiz Foundation's guidance, we streamline the process and help you prepare all necessary documents efficiently." },
-      { "q": "Do I need to learn Turkish to study in Turkey?", "a": "Not necessarily. If you choose an English-medium program, you can study without knowing Turkish. However, learning basic Turkish will greatly enhance your daily life experience." },
-      { "q": "What is the student visa process for Turkey?", "a": "Once you receive your acceptance letter, you apply for a student visa at your nearest Turkish consulate. The process usually takes 2-4 weeks. Our team provides full support throughout the visa application." }
+      {
+        "q": "How much does it cost to study in Turkey?",
+        "a": "Tuition fees in Turkey range from $3,000 to $15,000 per year depending on the university and program. Public universities are generally more affordable, while private universities may offer scholarships to reduce costs."
+      },
+      {
+        "q": "Can I study in English in Turkey?",
+        "a": "Yes! Many top Turkish universities offer full English-medium programs, including Boğaziçi, METU, Koç, Sabancı, and Bilkent universities. Our consultants can help you find the right English-taught program."
+      },
+      {
+        "q": "What scholarships are available for international students?",
+        "a": "Turkey offers excellent scholarships including the government-funded Türkiye Bursları (covers tuition + accommodation + stipend), and university-specific scholarships ranging from 25% to 100% tuition discounts."
+      },
+      {
+        "q": "How long does the application process take?",
+        "a": "The application process typically takes 4-8 weeks. With Yildiz Foundation's guidance, we streamline the process and help you prepare all necessary documents efficiently."
+      },
+      {
+        "q": "Do I need to learn Turkish to study in Turkey?",
+        "a": "Not necessarily. If you choose an English-medium program, you can study without knowing Turkish. However, learning basic Turkish will greatly enhance your daily life experience."
+      },
+      {
+        "q": "What is the student visa process for Turkey?",
+        "a": "Once you receive your acceptance letter, you apply for a student visa at your nearest Turkish consulate. The process usually takes 2-4 weeks. Our team provides full support throughout the visa application."
+      }
     ]
   },
   "footer": {
@@ -185,7 +249,14 @@
       "album": "Yildiz Album",
       "socialMedia": "Social Media"
     },
-    "servicesItems": ["University Selection", "Application Assistance", "Visa Support", "Scholarship Guidance", "Airport Pickup", "Housing Assistance"],
+    "servicesItems": [
+      "University Selection",
+      "Application Assistance",
+      "Visa Support",
+      "Scholarship Guidance",
+      "Airport Pickup",
+      "Housing Assistance"
+    ],
     "address": "Istanbul, Turkey"
   },
   "ai": {
