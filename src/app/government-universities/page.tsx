@@ -1,20 +1,19 @@
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
-import { UniversitiesClient } from './UniversitiesClient'
+import { UniversitiesClient } from '../universities/UniversitiesClient'
 import { prisma } from '@/lib/prisma'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Turkish Universities | Browse & Compare',
-  description: 'Browse 200+ Turkish universities. Filter by city, major, tuition fee, and more.',
+  title: 'Government Universities in Turkey',
+  description: 'Browse accredited state (government) universities in Turkey — tuition, faculties, and admission details.',
 }
 
 const cyprusCities = ['nicosia', 'kyrenia', 'famagusta', 'lefke', 'guzelyurt']
 
-export default async function UniversitiesPage() {
+export default async function GovernmentUniversitiesPage() {
   const universities = await prisma.university.findMany({
-    // Turkish state (government) universities have their own dedicated page.
-    where: { isActive: true, OR: [{ type: 'PRIVATE' }, { city: { in: cyprusCities } }] },
+    where: { isActive: true, type: 'PUBLIC', city: { notIn: cyprusCities } },
     include: { programs: { select: { tuitionFeeUSD: true, degreeType: true } }, _count: { select: { programs: true } } },
     orderBy: { ranking: 'asc' },
   })
@@ -22,7 +21,14 @@ export default async function UniversitiesPage() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-navy-950">
       <Navbar />
-      <UniversitiesClient universities={universities} cities={cities} />
+      <UniversitiesClient
+        universities={universities}
+        cities={cities}
+        title="Government Universities in Turkey"
+        subtitlePrefix="Browse "
+        subtitleSuffix="+ accredited state universities across Turkey"
+        hideTypeFilter
+      />
       <Footer />
     </div>
   )

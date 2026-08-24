@@ -20,7 +20,16 @@ const uniImages = [
   'https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=600&q=80',
 ]
 
-export function UniversitiesClient({ universities, cities }: { universities: University[]; cities: string[] }) {
+interface UniversitiesClientProps {
+  universities: University[]
+  cities: string[]
+  title?: string
+  subtitlePrefix?: string
+  subtitleSuffix?: string
+  hideTypeFilter?: boolean
+}
+
+export function UniversitiesClient({ universities, cities, title = 'Turkish Universities', subtitlePrefix = 'Find your perfect university from ', subtitleSuffix = '+ institutions', hideTypeFilter = false }: UniversitiesClientProps) {
   const [q, setQ] = useState('')
   const [city, setCity] = useState('')
   const [type, setType] = useState('')
@@ -44,8 +53,8 @@ export function UniversitiesClient({ universities, cities }: { universities: Uni
       {/* Header */}
       <div className="bg-gradient-to-br from-navy-900 to-navy-800 py-14 px-4">
         <div className="container mx-auto text-center">
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">Turkish Universities</h1>
-          <p className="text-blue-100 text-lg mb-8">Find your perfect university from {universities.length}+ institutions</p>
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">{title}</h1>
+          <p className="text-blue-100 text-lg mb-8">{subtitlePrefix}{universities.length}{subtitleSuffix}</p>
           <div className="max-w-2xl mx-auto flex gap-3">
             <div className="flex-1 flex items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-4">
               <Search className="w-5 h-5 text-white/50 mr-3" />
@@ -61,12 +70,14 @@ export function UniversitiesClient({ universities, cities }: { universities: Uni
                 <option value="" className="text-gray-900">All Cities</option>
                 {cities.map(c => <option key={c} value={c} className="text-gray-900">{c}</option>)}
               </select>
-              <select value={type} onChange={e => setType(e.target.value)} className="bg-white/10 border border-white/20 text-white rounded-xl px-3 py-2 text-sm outline-none">
-                <option value="" className="text-gray-900">All Types</option>
-                <option value="PUBLIC" className="text-gray-900">Public</option>
-                <option value="PRIVATE" className="text-gray-900">Private</option>
-              </select>
-              <div className="col-span-2 flex items-center gap-3">
+              {!hideTypeFilter && (
+                <select value={type} onChange={e => setType(e.target.value)} className="bg-white/10 border border-white/20 text-white rounded-xl px-3 py-2 text-sm outline-none">
+                  <option value="" className="text-gray-900">All Types</option>
+                  <option value="PUBLIC" className="text-gray-900">Public</option>
+                  <option value="PRIVATE" className="text-gray-900">Private</option>
+                </select>
+              )}
+              <div className={`flex items-center gap-3 ${hideTypeFilter ? 'col-span-3' : 'col-span-2'}`}>
                 <span className="text-white/70 text-xs whitespace-nowrap">Max Fee: ${maxFee.toLocaleString()}</span>
                 <input type="range" min={2000} max={20000} step={500} value={maxFee} onChange={e => setMaxFee(Number(e.target.value))} className="flex-1 accent-gold-400" />
               </div>
