@@ -13,6 +13,7 @@ const navLinks = [
   { href: '/blog', label: 'Blog' },
   { href: '/about', label: 'About' },
   { href: '/album', label: 'Album' },
+  { href: '/social-media', label: 'Social Media' },
   { href: '/contact', label: 'Contact' },
 ]
 
