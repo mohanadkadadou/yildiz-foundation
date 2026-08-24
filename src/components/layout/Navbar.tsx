@@ -12,6 +12,7 @@ const navLinks = [
   { href: '/programs', label: 'Programs' },
   { href: '/blog', label: 'Blog' },
   { href: '/about', label: 'About' },
+  { href: '/album', label: 'Album' },
   { href: '/contact', label: 'Contact' },
 ]
 
