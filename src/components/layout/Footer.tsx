@@ -1,8 +1,24 @@
 'use client'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Youtube } from 'lucide-react'
+import { Mail, Phone, MapPin, Facebook, Instagram, Youtube, MessageCircle } from 'lucide-react'
 import { useTranslations } from '@/components/shared/LocaleProvider'
+
+function TiktokIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M16.6 5.82c-.9-.87-1.4-2.05-1.4-3.32h-3.1v13.24c0 1.62-1.32 2.94-2.94 2.94a2.94 2.94 0 0 1-2.94-2.94 2.94 2.94 0 0 1 2.94-2.94c.27 0 .53.04.78.1V9.72c-.25-.03-.52-.05-.78-.05a6.08 6.08 0 0 0-6.08 6.08 6.08 6.08 0 0 0 6.08 6.08 6.08 6.08 0 0 0 6.08-6.08V9.01a9.24 9.24 0 0 0 5.4 1.73V7.64a5.83 5.83 0 0 1-4.04-1.82z"/>
+    </svg>
+  )
+}
+
+const SOCIAL_LINKS = [
+  { Icon: Facebook, href: 'https://www.facebook.com/yildizakdem2/?ref=pages_you_manage', label: 'Facebook' },
+  { Icon: Instagram, href: 'https://www.instagram.com/yildiz_edu/', label: 'Instagram' },
+  { Icon: TiktokIcon, href: 'https://www.tiktok.com/@yildiz_edu_official', label: 'TikTok' },
+  { Icon: Youtube, href: 'https://youtube.com/@yildiz_education', label: 'YouTube' },
+  { Icon: MessageCircle, href: 'https://whatsapp.com/channel/0029Vad3QWg5a24AP3H2LN3t', label: 'WhatsApp' },
+]
 
 export function Footer() {
   const { t, tArray } = useTranslations()
@@ -28,8 +44,8 @@ export function Footer() {
             </div>
             <p className="text-blue-200 text-sm leading-relaxed mb-5">{t('footer.taglineDesc')}</p>
             <div className="flex gap-3">
-              {[Facebook, Instagram, Twitter, Youtube].map((Icon, i) => (
-                <a key={i} href="#" className="w-9 h-9 rounded-lg bg-white/10 hover:bg-gold-500 flex items-center justify-center transition-colors"><Icon className="w-4 h-4" /></a>
+              {SOCIAL_LINKS.map(({ Icon, href, label }) => (
+                <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="w-9 h-9 rounded-lg bg-white/10 hover:bg-gold-500 flex items-center justify-center transition-colors"><Icon className="w-4 h-4" /></a>
               ))}
             </div>
           </div>
