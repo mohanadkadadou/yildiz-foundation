@@ -1,0 +1,467 @@
+{
+  "batumi-shota-rustaveli-state-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Batumi_University.jpg",
+    "license": "Public domain",
+    "author": "Ephraim Stillberg"
+  },
+  "free-university-of-tbilisi": {
+    "source": "https://commons.wikimedia.org/wiki/File:Free_University_of_Tbilisi_Library.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Free University of Tbilisi"
+  },
+  "georgian-technical-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Georgische_Technische_Universit%C3%A4t_-_1._Korpus.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": "Sven Teschke, Büdingen"
+  },
+  "ilia-state-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Iliauni1korpusi.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Qwelly"
+  },
+  "tbilisi-state-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:TSU_Main_Building_in_2018_(2).jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Mehman Ibragimov for UG Georgia"
+  },
+  "free-university-of-berlin": {
+    "source": "https://commons.wikimedia.org/wiki/File:Freie_Universitaet_Berlin_-_Gebaeudekomplex_Rost-_und_Silberlaube.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": "torinberl"
+  },
+  "goethe-university-frankfurt": {
+    "source": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_B_145_Bild-F005759-0014,_Frankfurt-Main,_Universit%C3%A4t.jpg",
+    "license": "CC BY-SA 3.0 de",
+    "author": "Schlempp"
+  },
+  "heidelberg-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Friedrichsbau_Heidelberg_Altstadt_Bunsen_Statue.JPG",
+    "license": "CC BY-SA 3.0",
+    "author": "4028mdk09"
+  },
+  "humboldt-university-of-berlin": {
+    "source": "https://commons.wikimedia.org/wiki/File:Berl%C3%ADn_Humboldtova_univerzita_3.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "VitVit"
+  },
+  "karlsruhe-institute-of-technology": {
+    "source": "https://commons.wikimedia.org/wiki/File:Karlsruhe_Uni_Hauptgebaeude.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": "AlterVista at German Wikipedia"
+  },
+  "leipzig-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:BibliothecaAlbertina_Leipzig.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": "L.E.rewi-sor"
+  },
+  "ludwig-maximilian-university-of-munich": {
+    "source": "https://commons.wikimedia.org/wiki/File:Facultad_de_Derecho_de_la_Universidad_Ludwig-Maximilian,_M%C3%BAnich,_Alemania,_2012-04-30,_DD_02.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": "Diego Delso"
+  },
+  "rwth-aachen-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:1196-18-rwth-aachen-hg-von-hendrik-brixius.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": "Hendrik Brixius"
+  },
+  "technical-university-of-berlin": {
+    "source": "https://commons.wikimedia.org/wiki/File:TU_Berlin_Hauptgebaeude070710_UlrichDahl.jpg",
+    "license": "Copyrighted free use",
+    "author": "TU Berlin/Pressestelle/Ulrich Dahl"
+  },
+  "technical-university-of-munich": {
+    "source": "https://commons.wikimedia.org/wiki/File:Technische_Universit%C3%A4t_M%C3%BCnchen_Forschungszentrum_campus_(170818042-cc).jpg",
+    "license": "CC BY 4.0",
+    "author": "Ernst A. Graf/ESO"
+  },
+  "university-of-bonn": {
+    "source": "https://commons.wikimedia.org/wiki/File:University-bonn_2005-11-18.jpg",
+    "license": "Public domain",
+    "author": "Daniel Tibi (Dti) | daniel-tibi.de"
+  },
+  "university-of-cologne": {
+    "source": "https://commons.wikimedia.org/wiki/File:Universitat_zu_K%C3%B6ln_Hauptgeb%C3%A4ude_ost.jpg",
+    "license": "Public domain",
+    "author": "UzK"
+  },
+  "university-of-freiburg": {
+    "source": "https://commons.wikimedia.org/wiki/File:Universit%C3%A4t_Freiburg_Epitaph.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": "AlterVista"
+  },
+  "university-of-hamburg": {
+    "source": "https://commons.wikimedia.org/wiki/File:UniHHHauptgebaeude.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": "Merlin Senger"
+  },
+  "budapest-university-of-technology-and-economics": {
+    "source": "https://commons.wikimedia.org/wiki/File:Budapest,_M%C5%B1szaki_Egyetem.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": "Varius"
+  },
+  "eotvos-lorand-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:ElteFotoThalerTamas2.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Thaler Tamas"
+  },
+  "pazmany-peter-catholic-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:PPCU_Faculty_of_Information_Technology_and_Bionics_(d)_(2).jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Sir Morosus"
+  },
+  "semmelweis-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Semmelweis_University,_main_building.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Attila Kovacs"
+  },
+  "university-of-debrecen": {
+    "source": "https://commons.wikimedia.org/wiki/File:DE-foepulet.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Unideb"
+  },
+  "university-of-miskolc": {
+    "source": "https://commons.wikimedia.org/wiki/File:UnivMiskolc_Main.jpg",
+    "license": "CC BY 2.5",
+    "author": "No machine-readable author provided. Serinde assumed (based on copyright claims)."
+  },
+  "university-of-pecs": {
+    "source": "https://commons.wikimedia.org/wiki/File:Rector%27s_Office,_University_of_P%C3%A9cs.JPG",
+    "license": "CC BY-SA 3.0",
+    "author": "Molnár Bence (Bencemac at Hungarian Wikipedia)"
+  },
+  "university-of-szeged": {
+    "source": "https://commons.wikimedia.org/wiki/File:Szegedi_Tudom%C3%A1nyegyetem.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "szeged university"
+  },
+  "cyprus-west-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Cwu-library.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Cwu2015"
+  },
+  "babes-bolyai-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Universitatea_Babes-Bolyai_2026.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Yerpo"
+  },
+  "carol-davila-university-of-medicine-and-pharmacy": {
+    "source": "https://commons.wikimedia.org/wiki/File:Fosta_Facultate_de_Medicina_azi_Universitatea_de_Medicina_si_Farmacie,_Bd._Eroii_Sanitari_nr._8,_sect._5,_Bucuresti.JPG",
+    "license": "CC BY-SA 3.0 ro",
+    "author": "Britchi Mirela"
+  },
+  "iuliu-hatieganu-university-of-medicine-and-pharmacy": {
+    "source": "https://commons.wikimedia.org/wiki/File:EmilIsacNr13_(3).JPG",
+    "license": "CC BY-SA 3.0 ro",
+    "author": "Țetcu Mircea Rareș"
+  },
+  "ovidius-university-of-constanta": {
+    "source": "https://commons.wikimedia.org/wiki/File:Campus-Univ-Ovidius.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Sîmbotin"
+  },
+  "politehnica-university-of-bucharest": {
+    "source": "https://commons.wikimedia.org/wiki/File:Universitatea_Politehnica_din_Bucure%C8%99ti-2006_0604UPB0032.jpg",
+    "license": "Public domain",
+    "author": "CristianChirita"
+  },
+  "university-of-bucharest": {
+    "source": "https://commons.wikimedia.org/wiki/File:Bucharest_university.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": ""
+  },
+  "west-university-of-timisoara": {
+    "source": "https://commons.wikimedia.org/wiki/File:West_University_of_Timisoara_(1).jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Alexandru M."
+  },
+  "carlos-iii-university-of-madrid": {
+    "source": "https://commons.wikimedia.org/wiki/File:Campuscolmenarejo.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": "Gotesan"
+  },
+  "complutense-university-of-madrid": {
+    "source": "https://commons.wikimedia.org/wiki/File:Aula_de_la_Universidad_Complutense_de_Madrid.jpg",
+    "license": "CC BY-SA 2.0",
+    "author": "Max Alexander / PromoMadrid"
+  },
+  "polytechnic-university-of-valencia": {
+    "source": "https://commons.wikimedia.org/wiki/File:Agora_UPV_02.JPG",
+    "license": "CC BY 3.0",
+    "author": "Carlesmari"
+  },
+  "pompeu-fabra-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Pla%C3%A7a_de_la_Merc%C3%A8_-_Rectorat_de_la_Universitat_Pompeu_Fabra.JPG",
+    "license": "CC BY-SA 3.0",
+    "author": "Jordiferrer"
+  },
+  "technical-university-of-madrid": {
+    "source": "https://commons.wikimedia.org/wiki/File:Rectorado_de_la_Universidad_Polit%C3%A9cnica_de_Madrid_01.jpg",
+    "license": "CC BY-SA 3.0 es",
+    "author": "Luis García (Zaqarbal)"
+  },
+  "university-of-barcelona": {
+    "source": "https://commons.wikimedia.org/wiki/File:Universitat_de_Barcelona_-_panoramio_(1).jpg",
+    "license": "CC BY 3.0",
+    "author": "Mister No"
+  },
+  "university-of-salamanca": {
+    "source": "https://commons.wikimedia.org/wiki/File:University_of_Salamanca_Fray_Luis_de_Leon.jpg",
+    "license": "CC BY 2.0",
+    "author": "Victoria Rachitzky"
+  },
+  "university-of-seville": {
+    "source": "https://commons.wikimedia.org/wiki/File:Universidad_de_Sevilla_001.jpg",
+    "license": "CC BY 3.0",
+    "author": "Anual"
+  },
+  "university-of-valencia": {
+    "source": "https://commons.wikimedia.org/wiki/File:Universitat_val%C3%A8ncia_rectorat.jpg",
+    "license": "Public domain",
+    "author": "Felivet"
+  },
+  "university-of-zaragoza": {
+    "source": "https://commons.wikimedia.org/wiki/File:Zaragoza_-_Ciudad_Universitaria.jpg",
+    "license": "CC0",
+    "author": "Zarateman"
+  },
+  "damascus-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Damascus_University.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": "Syrian Eng"
+  },
+  "syrian-private-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Spumc.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": "Zaifoi"
+  },
+  "tishreen-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:University_of_Latakia_building_and_perimeter_2002.jpg",
+    "license": "Public domain",
+    "author": "فادي شاهين"
+  },
+  "university-of-aleppo": {
+    "source": "https://commons.wikimedia.org/wiki/File:Aleppo_university.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": "sorry We, Syrian people"
+  },
+  "akdeniz-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Akdeniz_%C3%9Cniversitesi_E%C4%9Fitim_Fak%C3%BCltesi_2.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Enessubasi33"
+  },
+  "altinbas-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Mahmutbey_Campus.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Uyarı: Burada yer alan yatırım bilgi, yorum ve tavsiyeleri yatırım danışmanlığı kapsamında değildir. Yatırım danışmanlığ"
+  },
+  "anadolu-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Anadolu_%C3%9Cniversitesi_K%C3%BCt%C3%BCphanesi.JPG",
+    "license": "Public domain",
+    "author": "Originally created and uploaded to the Turkish Wikipedia by tr:User:Vikiçizer"
+  },
+  "ankara-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Dil_ve_Tarih_Co%C4%9Frafya_Fak%C3%BCltesi_Binas%C4%B1,_Ankara.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": "User:Avniyazici"
+  },
+  "ataturk-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Erzurum-Atat%C3%BCrk_%C3%9Cniversitesi_Kamp%C3%BCs_giri%C5%9F.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": "Eğitmen Mahmut"
+  },
+  "balikesir-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Bal%C4%B1kesir_Faculty_of_Fine_Arts.JPG",
+    "license": "CC BY-SA 3.0",
+    "author": "Ollios"
+  },
+  "bilkent-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Bilkent_University_-_Main_Library.jpg",
+    "license": "CC BY 2.5",
+    "author": "Bilkent University"
+  },
+  "bogazici-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Bogazici_University.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": "Turkmessage"
+  },
+  "bursa-uludag-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Mimarl%C4%B1k_Fak%C3%BCltesi.jpg",
+    "license": "CC BY 3.0",
+    "author": "Ollios"
+  },
+  "cukurova-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:%C3%87U_Beyazevler_Campus.JPG",
+    "license": "CC BY-SA 3.0",
+    "author": "Seyhan668"
+  },
+  "dicle-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Dicle_%C3%9Cniversitesi_M%C3%BChendislik_Mimarl%C4%B1k_Fak%C3%BCltesi.JPG",
+    "license": "CC BY-SA 3.0",
+    "author": "Sonrisa"
+  },
+  "dokuz-eylul-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Dokuz_Eylul_University_Campus_Entry_Izmir_Turkey.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": "Mr. Metin Canbalaban"
+  },
+  "erciyes-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Erciyes_Universit%C3%A4t_(2).JPG",
+    "license": "Copyrighted free use",
+    "author": "Turan Kaya"
+  },
+  "eskisehir-osmangazi-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:M%C3%BCh_Mim_Fak%C3%BCltesi_Bah%C3%A7esi_-_panoramio_-_Emin_Ba%C5%9Far_%C3%96ZDEM%C4%B0R_(1).jpg",
+    "license": "CC BY 3.0",
+    "author": "Emin Başar ÖZDEMİR"
+  },
+  "gazi-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:GaziUn%C4%B1versitesi.jpg",
+    "license": "CC BY-SA 2.5",
+    "author": "The original uploader was Ben Linus at Turkish Wikipedia."
+  },
+  "gaziantep-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Gaziantep_University_Faculty_of_Economics_and_Administrative_Sciences.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Arastirmagorevlisi"
+  },
+  "istanbul-bilgi-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Santralistanbul_campus_(6).jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Jelican9"
+  },
+  "istanbul-technical-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Istanbul_asv2020-02_img69_Ma%C3%A7ka_Armory.jpg",
+    "license": "FAL",
+    "author": "A.Savin"
+  },
+  "istanbul-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Istanbul_University_20220421_(1).jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Zafer"
+  },
+  "izmir-institute-of-technology": {
+    "source": "https://commons.wikimedia.org/wiki/File:Iyte_entrance_gate.jpg",
+    "license": "CC0",
+    "author": "Mavrikant"
+  },
+  "kadir-has-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:KadirHasUniversity.JPG",
+    "license": "CC BY-SA 4.0",
+    "author": "CeeGee"
+  },
+  "koc-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Ko%C3%A7University2.jpg",
+    "license": "Public domain",
+    "author": "Jorge1767"
+  },
+  "kocaeli-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Kocaeli_%C3%9Cniversitesi_Kar.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Ucandairebaskani"
+  },
+  "manisa-celal-bayar-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Celal_Bayar_%C3%9Cniversitesi_T%C4%B1p_Fak%C3%BCltesi_Hastanesi.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Narsist12"
+  },
+  "marmara-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:MarmaraUni.jpg",
+    "license": "CC BY 3.0",
+    "author": "Anilyilmaz"
+  },
+  "mersin-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Mersin_%C3%9Cniversitesi_Bilgi_Eri%C5%9Fim_ve_%C4%B0leti%C5%9Fim_Merkezi.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": "Cobija"
+  },
+  "middle-east-technical-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:MiddleEastTechnicalUniversityCampus800x470.jpg",
+    "license": "Public domain",
+    "author": "AtilimGunesBaydin at English Wikipedia"
+  },
+  "ondokuz-mayis-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:OM%C3%9C_T%C4%B1p_Fak%C3%BCltesi.JPG",
+    "license": "CC BY-SA 4.0",
+    "author": "Omubidb"
+  },
+  "sabanci-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:SabanciUniversity_DormView.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": "Cerian"
+  },
+  "sakarya-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Sakaryauniversity.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": ""
+  },
+  "suleyman-demirel-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Suleyman_Demirel_University,_Outside_view,_Entrance.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": "Berdakb"
+  },
+  "trakya-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Edirne_trakya_university.jpg",
+    "license": "CC BY-SA 2.5",
+    "author": "Piotr Tysarczyk"
+  },
+  "yeditepe-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Yeditepe_University_26_August_Campus_(2)_20220315.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Sakhalinio"
+  },
+  "yildiz-technical-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Y%C4%B1ld%C4%B1z_Teknik_%C3%9Cniversitesi_06.jpg",
+    "license": "Public domain",
+    "author": "Chapultepec"
+  },
+  "corvinus-university-of-budapest": {
+    "source": "https://commons.wikimedia.org/wiki/File:Corvinus_University_Budapest_Main_Building.jpg",
+    "license": "CC BY-SA 2.0",
+    "author": "Darkone"
+  },
+  "alexandru-ioan-cuza-university-of-iasi": {
+    "source": "https://commons.wikimedia.org/wiki/File:Ia%C5%9Fi,_Alexandru_Ioan_Cuza_University,_Building_D.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": "Argenna"
+  },
+  "george-emil-palade-university-of-medicine-pharmacy-science-and-technology-of-targu-mures": {
+    "source": "https://commons.wikimedia.org/wiki/File:University_of_Medicine_and_Pharmacy_of_T%C3%A2rgu-Mure%C5%9F.JPG",
+    "license": "CC BY-SA 3.0",
+    "author": "Dr. Székely János"
+  },
+  "grigore-t-popa-university-of-medicine-and-pharmacy-iasi": {
+    "source": "https://commons.wikimedia.org/wiki/File:Grigore_T._Popa_University_of_Medicine_and_Pharmacy_Sector_A.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": "O_mores (talk) (Uploads)\n\nUploaded by O mores at en.wikipedia"
+  },
+  "transilvania-university-of-brasov": {
+    "source": "https://commons.wikimedia.org/wiki/File:Transilvania_University_building_N.jpg",
+    "license": "CC0",
+    "author": "Whitepixels"
+  },
+  "university-of-navarra": {
+    "source": "https://commons.wikimedia.org/wiki/File:Green_trees_at_University_of_Navarra_campus_-_Pamplona_-_April_2024.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Anass Sedrati"
+  },
+  "mugla-sitki-kocman-university": {
+    "source": "https://commons.wikimedia.org/wiki/File:Mu%C4%9Fla_S%C4%B1tk%C4%B1_Ko%C3%A7man_%C3%9Cniversitesi_K%C3%B6tekli_Kamp%C3%BCs%C3%BC,_2021_07.jpg",
+    "license": "CC BY 4.0",
+    "author": "Gargarapalvin"
+  },
+  "david-tvildiani-medical-university": {
+    "source": "https://dtmu.ge/wp-content/uploads/2024/03/1482148451815577957_1538253982869681_4563031949039814852_o.jpg",
+    "license": "Official university website image",
+    "author": ""
+  },
+  "university-of-georgia-tbilisi": {
+    "source": "https://ug.edu.ge/storage/sliders/November2019/W08X22081aCTGCMZSsAU.jpg",
+    "license": "Official university website image",
+    "author": ""
+  },
+  "gebze-technical-university": {
+    "source": "https://www.gtu.edu.tr/images/kampus.jpg",
+    "license": "Official university website image",
+    "author": ""
+  }
+}

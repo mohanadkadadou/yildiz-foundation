@@ -25,6 +25,7 @@ interface University {
   programs: Array<{ tuitionFeeUSD: number }>
   totalStudents: number | null
   isFeatured: boolean
+  coverImageUrl: string | null
 }
 
 interface Props {
@@ -94,7 +95,7 @@ export function FeaturedUniversities({ universities }: Props) {
               {/* Cover image */}
               <div className="relative h-48 overflow-hidden">
                 <img
-                  src={universityImages[uni.slug] || universityImages.default}
+                  src={uni.coverImageUrl || universityImages[uni.slug] || universityImages.default}
                   alt={uni.nameEn}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
