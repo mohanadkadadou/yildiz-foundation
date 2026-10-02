@@ -4,6 +4,7 @@ import { Footer } from '@/components/layout/Footer'
 import { HeroSection } from '@/components/home/HeroSection'
 import { StatsSection } from '@/components/home/StatsSection'
 import { FeaturedUniversities } from '@/components/home/FeaturedUniversities'
+import { DestinationsSection } from '@/components/home/DestinationsSection'
 import { PopularPrograms } from '@/components/home/PopularPrograms'
 import { WhyTurkey } from '@/components/home/WhyTurkey'
 import { TestimonialsSection } from '@/components/home/TestimonialsSection'
@@ -38,6 +39,9 @@ async function getHomeData() {
     }),
   ])
 
+  const countryGroups = await prisma.university.groupBy({ by: ['country'], where: { isActive: true }, _count: { _all: true } })
+  const destinationCounts = Object.fromEntries(countryGroups.map(g => [g.country, g._count._all]))
+
   const stats = {
     universities: await prisma.university.count(),
     programs: await prisma.program.count(),
@@ -45,11 +49,11 @@ async function getHomeData() {
     countries: 45,
   }
 
-  return { universities, programs, testimonials, posts, stats }
+  return { universities, programs, testimonials, posts, stats, destinationCounts }
 }
 
 export default async function HomePage() {
-  const { universities, programs, testimonials, posts, stats } = await getHomeData()
+  const { universities, programs, testimonials, posts, stats, destinationCounts } = await getHomeData()
 
   return (
     <div className="min-h-screen bg-white dark:bg-navy-950">
@@ -57,6 +61,7 @@ export default async function HomePage() {
       <main>
         <HeroSection />
         <StatsSection stats={stats} />
+        <DestinationsSection counts={destinationCounts} />
         <FeaturedUniversities universities={universities} />
         <PopularPrograms programs={programs} />
         <WhyTurkey />

@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
 
     if (!process.env.OPENAI_API_KEY) {
       return NextResponse.json({
-        message: 'Hello! I can help you find Turkish universities. Please contact us via WhatsApp at +90 500 000 0000 or book a free consultation for personalized advice!'
+        message: 'Hello! I can help you find Turkish universities. Please contact us via WhatsApp at +90 539 575 5269 or book a free consultation for personalized advice!'
       })
     }
 

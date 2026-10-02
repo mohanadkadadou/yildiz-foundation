@@ -8,6 +8,7 @@ interface Program { id: string; nameEn: string; nameAr: string; nameTr: string; 
 interface Scholarship { id: string; nameEn: string; nameAr: string; nameTr: string; descEn: string; descAr: string; descTr: string; percentage: number | null }
 interface Requirement { id: string; textEn: string; textAr: string; textTr: string }
 interface University {
+  country: string
   nameEn: string; nameAr: string; nameTr: string
   cityEn: string; cityAr: string; cityTr: string
   descriptionEn: string; descriptionAr: string; descriptionTr: string
@@ -16,9 +17,9 @@ interface University {
   programs: Program[]; scholarships: Scholarship[]; requirements: Requirement[]
 }
 
-export function UniversityDetailClient({ uni, isCyprus }: { uni: University; isCyprus: boolean }) {
+export function UniversityDetailClient({ uni }: { uni: University }) {
   const { t, locale } = useTranslations()
-  const country = isCyprus ? t('universities.northernCyprus') : t('universities.turkey')
+  const country = t(`countries.${uni.country}`)
 
   const images = [
     uni.coverImageUrl || 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1200&q=80',

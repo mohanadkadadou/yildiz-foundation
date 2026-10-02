@@ -85,6 +85,7 @@ model University {
   nameTr           String
   logoUrl          String?
   coverImageUrl    String?
+  country          String            @default("turkey")
   city             String
   cityEn           String
   cityAr           String

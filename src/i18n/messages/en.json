@@ -12,7 +12,8 @@
     "login": "Login",
     "register": "Register",
     "dashboard": "Dashboard",
-    "logout": "Logout"
+    "logout": "Logout",
+    "courses": "Courses"
   },
   "hero": {
     "badge": "Turkey's #1 Educational Consultancy",
@@ -100,7 +101,19 @@
     "governmentSubtitlePrefix": "Browse ",
     "governmentSubtitleSuffix": "+ accredited state universities across Turkey",
     "subtitlePrefix": "Find your perfect university from ",
-    "subtitleSuffix": "+ institutions"
+    "subtitleSuffix": "+ institutions",
+    "country": "Country",
+    "allCountries": "All Countries",
+    "countryTitles": {
+      "turkey": "Universities in Turkey",
+      "northern-cyprus": "Universities in Northern Cyprus",
+      "georgia": "Universities in Georgia",
+      "germany": "Universities in Germany",
+      "spain": "Universities in Spain",
+      "hungary": "Universities in Hungary",
+      "romania": "Universities in Romania",
+      "syria": "Universities in Syria"
+    }
   },
   "programs": {
     "eyebrow": "Top Programs",
@@ -247,7 +260,8 @@
       "blog": "Blog",
       "aboutUs": "About Us",
       "album": "Yildiz Album",
-      "socialMedia": "Social Media"
+      "socialMedia": "Social Media",
+      "courses": "Courses"
     },
     "servicesItems": [
       "University Selection",
@@ -396,5 +410,60 @@
     "noAccount": "Don't have an account?",
     "bookConsultation": "Book Consultation",
     "incorrectCredentials": "Incorrect email or password"
+  },
+  "countries": {
+    "turkey": "Turkey",
+    "northern-cyprus": "Northern Cyprus",
+    "georgia": "Georgia",
+    "germany": "Germany",
+    "spain": "Spain",
+    "hungary": "Hungary",
+    "romania": "Romania",
+    "syria": "Syria"
+  },
+  "destinations": {
+    "eyebrow": "Study Destinations",
+    "title": "Choose Your Study Destination",
+    "subtitle": "Explore universities in Turkey, Northern Cyprus, Georgia, Germany, Spain, Hungary, Romania and Syria.",
+    "explore": "Explore universities",
+    "count": "universities"
+  },
+  "courses": {
+    "eyebrow": "Courses & Exams",
+    "title": "Courses & Exam Preparation",
+    "subtitle": "Prepare for the exams you need to get into university.",
+    "register": "Register via WhatsApp",
+    "items": [
+      {
+        "key": "tryos",
+        "name": "TR-YÖS",
+        "full": "Exam for International Students (TR-YÖS)",
+        "desc": "Preparation for the TR-YÖS exam used by Turkish universities to admit international students."
+      },
+      {
+        "key": "sat",
+        "name": "SAT",
+        "full": "Scholastic Assessment Test (SAT)",
+        "desc": "Preparation for the SAT, the standardized test many universities worldwide use for undergraduate admission."
+      },
+      {
+        "key": "toefl",
+        "name": "TOEFL",
+        "full": "Test of English as a Foreign Language (TOEFL)",
+        "desc": "English proficiency training for the TOEFL, accepted by universities around the world."
+      },
+      {
+        "key": "tomer",
+        "name": "TÖMER",
+        "full": "Turkish Language Courses (TÖMER)",
+        "desc": "Turkish language courses and TÖMER exam preparation for students entering Turkish-taught programs."
+      },
+      {
+        "key": "yks",
+        "name": "YKS",
+        "full": "Higher Education Institutions Exam (YKS)",
+        "desc": "Preparation for the YKS, Turkey's national university entrance exam."
+      }
+    ]
   }
 }

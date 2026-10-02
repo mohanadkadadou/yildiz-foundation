@@ -9,21 +9,17 @@ export const metadata: Metadata = {
   description: 'Browse accredited state (government) universities in Turkey — tuition, faculties, and admission details.',
 }
 
-const cyprusCities = ['nicosia', 'kyrenia', 'famagusta', 'lefke', 'guzelyurt']
-
 export default async function GovernmentUniversitiesPage() {
   const universities = await prisma.university.findMany({
-    where: { isActive: true, type: 'PUBLIC', city: { notIn: cyprusCities } },
+    where: { isActive: true, type: 'PUBLIC', country: 'turkey' },
     include: { programs: { select: { tuitionFeeUSD: true, degreeType: true } }, _count: { select: { programs: true } } },
     orderBy: { ranking: 'asc' },
   })
-  const cities = [...new Set(universities.map(u => u.cityEn))].filter(Boolean)
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-navy-950">
       <Navbar />
       <UniversitiesClient
         universities={universities}
-        cities={cities}
         variant="government"
         hideTypeFilter
       />

@@ -20,13 +20,10 @@ export default async function UniversityDetailPage({ params }: { params: Promise
   })
   if (!uni) notFound()
 
-  const cyprusCities = ['nicosia', 'kyrenia', 'famagusta', 'lefke', 'guzelyurt']
-  const isCyprus = cyprusCities.includes(uni.city)
-
   return (
     <div className="min-h-screen bg-white dark:bg-navy-950">
       <Navbar />
-      <UniversityDetailClient uni={uni} isCyprus={isCyprus} />
+      <UniversityDetailClient uni={uni} />
       <Footer />
     </div>
   )

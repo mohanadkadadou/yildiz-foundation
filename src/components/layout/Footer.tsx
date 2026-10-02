@@ -26,6 +26,7 @@ export function Footer() {
     ['links.universities', '/universities'],
     ['links.governmentUniversities', '/government-universities'],
     ['links.programs', '/programs'],
+    ['links.courses', '/courses'],
     ['links.scholarships', '/scholarships'],
     ['links.blog', '/blog'],
     ['links.aboutUs', '/about'],
@@ -69,8 +70,8 @@ export function Footer() {
             <h4 className="font-bold text-white mb-5">{t('footer.contact')}</h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-2.5 text-blue-200 text-sm"><MapPin className="w-4 h-4 mt-0.5 text-gold-400 flex-shrink-0" />{t('footer.address')}</li>
-              <li className="flex items-center gap-2.5 text-blue-200 text-sm"><Phone className="w-4 h-4 text-gold-400" />+90 500 000 0000</li>
-              <li className="flex items-center gap-2.5 text-blue-200 text-sm"><Mail className="w-4 h-4 text-gold-400" />info@yildizfoundation.com</li>
+              <li className="flex items-center gap-2.5 text-blue-200 text-sm"><Phone className="w-4 h-4 text-gold-400" /><a href="tel:+905395755269" dir="ltr" className="hover:text-gold-400 transition-colors">+90 539 575 5269</a></li>
+              <li className="flex items-center gap-2.5 text-blue-200 text-sm"><Mail className="w-4 h-4 text-gold-400" /><a href="mailto:yildiz2020t@gmail.com" className="hover:text-gold-400 transition-colors">yildiz2020t@gmail.com</a></li>
             </ul>
             <div className="mt-5">
               <h5 className="text-white font-semibold text-sm mb-2">{t('footer.newsletter')}</h5>

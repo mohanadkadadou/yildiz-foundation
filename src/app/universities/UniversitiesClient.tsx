@@ -7,7 +7,7 @@ import { useTranslations } from '@/components/shared/LocaleProvider'
 import { localize } from '@/lib/locale-helpers'
 
 interface University {
-  id: string; slug: string; nameEn: string; nameAr: string; nameTr: string;
+  id: string; slug: string; country: string; nameEn: string; nameAr: string; nameTr: string;
   cityEn: string; cityAr: string; cityTr: string; type: string; ranking: number | null;
   descriptionEn: string; descriptionAr: string; descriptionTr: string;
   totalStudents: number | null; isFeatured: boolean; coverImageUrl: string | null;
@@ -26,33 +26,38 @@ const uniImages = [
 
 interface UniversitiesClientProps {
   universities: University[]
-  cities: string[]
+  lockedCountry?: string
   variant?: 'all' | 'government'
   hideTypeFilter?: boolean
 }
 
-export function UniversitiesClient({ universities, cities, variant = 'all', hideTypeFilter = false }: UniversitiesClientProps) {
+export function UniversitiesClient({ universities, lockedCountry, variant = 'all', hideTypeFilter = false }: UniversitiesClientProps) {
   const { t, locale } = useTranslations()
-  const title = variant === 'government' ? t('universities.governmentTitle') : t('universities.all')
+  const title = variant === 'government' ? t('universities.governmentTitle') : lockedCountry ? t(`universities.countryTitles.${lockedCountry}`) : t('universities.all')
   const subtitlePrefix = variant === 'government' ? t('universities.governmentSubtitlePrefix') : t('universities.subtitlePrefix')
   const subtitleSuffix = variant === 'government' ? t('universities.governmentSubtitleSuffix') : t('universities.subtitleSuffix')
   const [q, setQ] = useState('')
+  const [country, setCountry] = useState('')
   const [city, setCity] = useState('')
   const [type, setType] = useState('')
   const [maxFee, setMaxFee] = useState(20000)
   const [favorites, setFavorites] = useState<Set<string>>(new Set())
   const [showFilters, setShowFilters] = useState(false)
 
+  const countries = useMemo(() => [...new Set(universities.map(u => u.country))], [universities])
+  const cities = useMemo(() => [...new Set(universities.filter(u => !country || u.country === country).map(u => u.cityEn))].filter(Boolean).sort(), [universities, country])
+
   const filtered = useMemo(() => universities.filter(u => {
+    if (country && u.country !== country) return false
     if (q && !u.nameEn.toLowerCase().includes(q.toLowerCase()) && !u.cityEn.toLowerCase().includes(q.toLowerCase())) return false
     if (city && u.cityEn !== city) return false
     if (type && u.type !== type) return false
     const minFee = u.programs.length ? Math.min(...u.programs.map(p => p.tuitionFeeUSD)) : 0
     if (minFee > maxFee) return false
     return true
-  }), [universities, q, city, type, maxFee])
+  }), [universities, q, country, city, type, maxFee])
 
-  const clearFilters = () => { setQ(''); setCity(''); setType(''); setMaxFee(20000) }
+  const clearFilters = () => { setQ(''); setCountry(''); setCity(''); setType(''); setMaxFee(20000) }
 
   return (
     <div className="pt-24">
@@ -72,6 +77,12 @@ export function UniversitiesClient({ universities, cities, variant = 'all', hide
           </div>
           {showFilters && (
             <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl mx-auto mt-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5 grid grid-cols-2 md:grid-cols-4 gap-4">
+              {!lockedCountry && countries.length > 1 && (
+                <select value={country} onChange={e => { setCountry(e.target.value); setCity('') }} className="bg-white/10 border border-white/20 text-white rounded-xl px-3 py-2 text-sm outline-none">
+                  <option value="" className="text-gray-900">{t('universities.allCountries')}</option>
+                  {countries.map(c => <option key={c} value={c} className="text-gray-900">{t(`countries.${c}`)}</option>)}
+                </select>
+              )}
               <select value={city} onChange={e => setCity(e.target.value)} className="bg-white/10 border border-white/20 text-white rounded-xl px-3 py-2 text-sm outline-none">
                 <option value="" className="text-gray-900">{t('universities.allCities')}</option>
                 {cities.map(c => <option key={c} value={c} className="text-gray-900">{c}</option>)}
@@ -83,7 +94,7 @@ export function UniversitiesClient({ universities, cities, variant = 'all', hide
                   <option value="PRIVATE" className="text-gray-900">{t('universities.private')}</option>
                 </select>
               )}
-              <div className={`flex items-center gap-3 ${hideTypeFilter ? 'col-span-3' : 'col-span-2'}`}>
+              <div className={`flex items-center gap-3 ${!lockedCountry && countries.length > 1 ? 'col-span-full' : hideTypeFilter ? 'col-span-3' : 'col-span-2'}`}>
                 <span className="text-white/70 text-xs whitespace-nowrap">{t('universities.maxFee')}: ${maxFee.toLocaleString()}</span>
                 <input type="range" min={2000} max={20000} step={500} value={maxFee} onChange={e => setMaxFee(Number(e.target.value))} className="flex-1 accent-gold-400" />
               </div>
@@ -96,7 +107,7 @@ export function UniversitiesClient({ universities, cities, variant = 'all', hide
       <div className="container mx-auto px-4 py-10">
         <div className="flex items-center justify-between mb-6">
           <p className="text-gray-600 dark:text-gray-300">{filtered.length} {t('universities.found')}</p>
-          {(q || city || type) && <button onClick={clearFilters} className="flex items-center gap-1.5 text-sm text-red-500 hover:text-red-700"><X className="w-4 h-4" /> {t('universities.clearFilters')}</button>}
+          {(q || country || city || type) && <button onClick={clearFilters} className="flex items-center gap-1.5 text-sm text-red-500 hover:text-red-700"><X className="w-4 h-4" /> {t('universities.clearFilters')}</button>}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((uni, i) => {

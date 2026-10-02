@@ -185,7 +185,7 @@ UPDATE "User" SET role = 'ADMIN' WHERE email = 'your@email.com';
 
 ## 📞 Support
 
-- WhatsApp: +90 500 000 0000
-- Email: info@yildizfoundation.com
+- WhatsApp: +90 539 575 5269
+- Email: yildiz2020t@gmail.com
 
 Built with ❤️ by Yildiz Foundation Team

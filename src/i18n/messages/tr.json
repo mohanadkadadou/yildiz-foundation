@@ -12,7 +12,8 @@
     "login": "Giriş Yap",
     "register": "Kayıt Ol",
     "dashboard": "Kontrol Paneli",
-    "logout": "Çıkış Yap"
+    "logout": "Çıkış Yap",
+    "courses": "Kurslar"
   },
   "hero": {
     "badge": "Türkiye'nin 1 Numaralı Eğitim Danışmanlığı",
@@ -100,7 +101,19 @@
     "governmentSubtitlePrefix": "Türkiye genelinde akredite ",
     "governmentSubtitleSuffix": "+ devlet üniversitesine göz atın",
     "subtitlePrefix": "En uygun üniversiteni ",
-    "subtitleSuffix": "+ kurum arasından bul"
+    "subtitleSuffix": "+ kurum arasından bul",
+    "country": "Ülke",
+    "allCountries": "Tüm Ülkeler",
+    "countryTitles": {
+      "turkey": "Türkiye Üniversiteleri",
+      "northern-cyprus": "Kuzey Kıbrıs Üniversiteleri",
+      "georgia": "Gürcistan Üniversiteleri",
+      "germany": "Almanya Üniversiteleri",
+      "spain": "İspanya Üniversiteleri",
+      "hungary": "Macaristan Üniversiteleri",
+      "romania": "Romanya Üniversiteleri",
+      "syria": "Suriye Üniversiteleri"
+    }
   },
   "programs": {
     "eyebrow": "Öne Çıkan Programlar",
@@ -247,7 +260,8 @@
       "blog": "Blog",
       "aboutUs": "Hakkımızda",
       "album": "Yıldız Albümü",
-      "socialMedia": "Sosyal Medya"
+      "socialMedia": "Sosyal Medya",
+      "courses": "Kurslar"
     },
     "servicesItems": [
       "Üniversite Seçimi",
@@ -396,5 +410,60 @@
     "noAccount": "Hesabınız yok mu?",
     "bookConsultation": "Danışmanlık Rezervasyonu",
     "incorrectCredentials": "E-posta veya şifre hatalı"
+  },
+  "countries": {
+    "turkey": "Türkiye",
+    "northern-cyprus": "Kuzey Kıbrıs",
+    "georgia": "Gürcistan",
+    "germany": "Almanya",
+    "spain": "İspanya",
+    "hungary": "Macaristan",
+    "romania": "Romanya",
+    "syria": "Suriye"
+  },
+  "destinations": {
+    "eyebrow": "Eğitim Destinasyonları",
+    "title": "Eğitim Alacağınız Ülkeyi Seçin",
+    "subtitle": "Türkiye, Kuzey Kıbrıs, Gürcistan, Almanya, İspanya, Macaristan, Romanya ve Suriye'deki üniversiteleri keşfedin.",
+    "explore": "Üniversiteleri Keşfet",
+    "count": "üniversite"
+  },
+  "courses": {
+    "eyebrow": "Kurslar ve Sınavlar",
+    "title": "Kurslar ve Sınav Hazırlık",
+    "subtitle": "Üniversiteye girmek için ihtiyaç duyduğunuz sınavlara hazırlanın.",
+    "register": "WhatsApp ile Kayıt Ol",
+    "items": [
+      {
+        "key": "tryos",
+        "name": "TR-YÖS",
+        "full": "Yabancı Uyruklu Öğrenci Sınavı (TR-YÖS)",
+        "desc": "Türk üniversitelerinin uluslararası öğrenci kabulünde kullandığı TR-YÖS sınavına hazırlık."
+      },
+      {
+        "key": "sat",
+        "name": "SAT",
+        "full": "Üniversite Giriş Sınavı (SAT)",
+        "desc": "Dünya genelinde birçok üniversitenin lisans kabulünde kullandığı SAT sınavına hazırlık."
+      },
+      {
+        "key": "toefl",
+        "name": "TOEFL",
+        "full": "İngilizce Yeterlilik Sınavı (TOEFL)",
+        "desc": "Dünya çapında üniversitelerce kabul edilen TOEFL için İngilizce hazırlık eğitimi."
+      },
+      {
+        "key": "tomer",
+        "name": "TÖMER",
+        "full": "Türkçe Dil Kursları (TÖMER)",
+        "desc": "Türkçe programlara girecek öğrenciler için Türkçe dil kursları ve TÖMER sınav hazırlığı."
+      },
+      {
+        "key": "yks",
+        "name": "YKS",
+        "full": "Yükseköğretim Kurumları Sınavı (YKS)",
+        "desc": "Türkiye'nin ulusal üniversite giriş sınavı YKS'ye hazırlık."
+      }
+    ]
   }
 }

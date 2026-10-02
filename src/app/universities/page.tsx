@@ -5,24 +5,26 @@ import { prisma } from '@/lib/prisma'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Turkish Universities | Browse & Compare',
-  description: 'Browse 200+ Turkish universities. Filter by city, major, tuition fee, and more.',
+  title: 'Universities | Turkey, Cyprus & Europe',
+  description: 'Browse universities in Turkey, Northern Cyprus, Georgia, Germany, Spain, Hungary, Romania and Syria.',
 }
 
-const cyprusCities = ['nicosia', 'kyrenia', 'famagusta', 'lefke', 'guzelyurt']
+const COUNTRIES = ['turkey', 'northern-cyprus', 'georgia', 'germany', 'spain', 'hungary', 'romania', 'syria']
 
-export default async function UniversitiesPage() {
+export default async function UniversitiesPage({ searchParams }: { searchParams: { country?: string } }) {
+  const lockedCountry = COUNTRIES.includes(searchParams.country || '') ? searchParams.country : undefined
   const universities = await prisma.university.findMany({
-    // Turkish state (government) universities have their own dedicated page.
-    where: { isActive: true, OR: [{ type: 'PRIVATE' }, { city: { in: cyprusCities } }] },
+    // Without a country filter, Turkish state universities are left out (they have their own dedicated page).
+    where: lockedCountry
+      ? { isActive: true, country: lockedCountry }
+      : { isActive: true, OR: [{ type: 'PRIVATE' }, { country: { not: 'turkey' } }] },
     include: { programs: { select: { tuitionFeeUSD: true, degreeType: true } }, _count: { select: { programs: true } } },
     orderBy: { ranking: 'asc' },
   })
-  const cities = [...new Set(universities.map(u => u.cityEn))].filter(Boolean)
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-navy-950">
       <Navbar />
-      <UniversitiesClient universities={universities} cities={cities} />
+      <UniversitiesClient universities={universities} lockedCountry={lockedCountry} />
       <Footer />
     </div>
   )

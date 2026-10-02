@@ -45,7 +45,7 @@ export default function ContactPage() {
               <div className="flex items-start gap-4 p-5 bg-gray-50 dark:bg-navy-900 rounded-2xl border border-gray-100 dark:border-navy-800">
                 <div className="p-3 bg-navy-800 rounded-xl"><Mail className="w-5 h-5 text-white" /></div>
                 <div><div className="font-semibold text-navy-900 dark:text-white">{t('contact.email')}</div>
-                <a href="mailto:info@yildizfoundation.com" className="text-gray-600 dark:text-gray-300 text-sm">info@yildizfoundation.com</a></div>
+                <a href="mailto:yildiz2020t@gmail.com" className="text-gray-600 dark:text-gray-300 text-sm">yildiz2020t@gmail.com</a></div>
               </div>
               <div className="flex items-start gap-4 p-5 bg-gray-50 dark:bg-navy-900 rounded-2xl border border-gray-100 dark:border-navy-800">
                 <div className="p-3 bg-navy-800 rounded-xl"><MapPin className="w-5 h-5 text-white" /></div>

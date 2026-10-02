@@ -12,6 +12,7 @@ import { useTranslations } from '@/components/shared/LocaleProvider'
 const navLinks = [
   { href: '/universities', key: 'universities' },
   { href: '/programs', key: 'programs' },
+  { href: '/courses', key: 'courses' },
   { href: '/blog', key: 'blog' },
   { href: '/about', key: 'about' },
   { href: '/album', key: 'album' },
@@ -46,10 +47,10 @@ export function Navbar() {
             </div>
           </Link>
 
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-0.5 xl:gap-1">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href}
-                className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
+                className={`px-2.5 xl:px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all duration-200 ${
                   scrolled ? 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-navy-800' : 'text-white/90 hover:text-white hover:bg-white/10'
                 }`}>
                 {t(`nav.${link.key}`)}
@@ -69,26 +70,26 @@ export function Navbar() {
 
             {session ? (
               <div className="flex items-center gap-2">
-                <Link href="/admin" className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
+                <Link href="/admin" className={`px-3 xl:px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all ${
                   scrolled ? 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-navy-800' : 'text-white hover:bg-white/10'
                 }`}>
                   {t('nav.dashboard')}
                 </Link>
                 <button onClick={() => signOut()}
-                  className="px-4 py-2 rounded-xl text-sm font-medium text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all">
+                  className="px-3 xl:px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all">
                   {t('nav.logout')}
                 </button>
               </div>
             ) : (
               <>
                 <Link href="/auth/login"
-                  className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
+                  className={`px-3 xl:px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all ${
                     scrolled ? 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-navy-800' : 'text-white hover:bg-white/10'
                   }`}>
                   {t('nav.login')}
                 </Link>
                 <Link href="/consultation"
-                  className="flex items-center gap-2 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-white font-semibold px-5 py-2.5 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg text-sm">
+                  className="flex items-center gap-2 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-white font-semibold whitespace-nowrap px-4 xl:px-5 py-2.5 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg text-sm">
                   <GraduationCap className="w-4 h-4" />
                   {t('nav.bookConsultation')}
                 </Link>
