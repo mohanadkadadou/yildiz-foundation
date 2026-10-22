@@ -465,5 +465,109 @@
         "desc": "Preparation for the YKS, Turkey's national university entrance exam."
       }
     ]
+  },
+  "programDetail": {
+    "notFound": "Program Not Found",
+    "about": "About this program",
+    "career": "Career opportunities",
+    "overview": "Program overview",
+    "degree": "Degree",
+    "language": "Language of study",
+    "duration": "Duration",
+    "years": "years",
+    "tuition": "Tuition per year",
+    "category": "Field",
+    "university": "University",
+    "viewUniversity": "View university",
+    "apply": "Interested in this program?",
+    "applyDesc": "Our advisors will help you with admission, documents and scholarships.",
+    "back": "All programs",
+    "languages": {
+      "ENGLISH": "English",
+      "TURKISH": "Turkish",
+      "ARABIC": "Arabic",
+      "ENGLISH_TURKISH": "English + Turkish"
+    }
+  },
+  "blogPost": {
+    "notFound": "Article Not Found",
+    "back": "All articles",
+    "published": "Published",
+    "share": "Share on WhatsApp",
+    "ctaTitle": "Need personal advice?",
+    "ctaDesc": "Book a free consultation and get a plan for your studies."
+  },
+  "scholarshipsPage": {
+    "eyebrow": "Scholarships",
+    "title": "Scholarships & Discounts",
+    "subtitle": "Scholarships and tuition discounts offered by our partner universities.",
+    "off": "discount",
+    "amount": "Amount",
+    "none": "No scholarships listed yet. Contact us for the latest offers.",
+    "apply": "Ask about this scholarship",
+    "viewUniversity": "View university",
+    "searchPlaceholder": "Search scholarships or universities..."
+  },
+  "legal": {
+    "updated": "Last updated: October 2026",
+    "contactLine": "Questions? Contact us at yildiz2020t@gmail.com.",
+    "privacy": {
+      "title": "Privacy Policy",
+      "sections": [
+        {
+          "h": "Information we collect",
+          "p": "When you book a consultation, send a message or create an account, we collect the details you provide: name, email, phone number, country, study interests and budget."
+        },
+        {
+          "h": "How we use it",
+          "p": "We use your information only to answer your enquiries, arrange consultations, help with university applications and send you relevant updates about studying abroad."
+        },
+        {
+          "h": "Sharing",
+          "p": "We share your details with a university or partner only when needed to process your application and only with your knowledge. We never sell your personal data."
+        },
+        {
+          "h": "Storage and security",
+          "p": "Your data is stored on secured servers with restricted access. Passwords are stored in hashed form and cannot be read by our staff."
+        },
+        {
+          "h": "Your rights",
+          "p": "You may ask us to access, correct or delete your personal data at any time by contacting us."
+        },
+        {
+          "h": "Cookies",
+          "p": "We use a small cookie to remember your language choice and to keep you signed in. We do not use advertising cookies."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "sections": [
+        {
+          "h": "About our service",
+          "p": "Yildiz Foundation provides educational consultancy and admission support. We are not a university and do not guarantee admission, visas or scholarships, which are decided by the relevant institutions and authorities."
+        },
+        {
+          "h": "Information on this website",
+          "p": "We work to keep university, program and fee information accurate, but it may change. Please confirm details with the university before applying or paying any fees."
+        },
+        {
+          "h": "Your account",
+          "p": "You are responsible for the accuracy of the information you submit and for keeping your login details confidential."
+        },
+        {
+          "h": "Fees",
+          "p": "Any consultancy or service fees will be explained and agreed with you in advance. Tuition fees are paid to the university, not to this website."
+        },
+        {
+          "h": "Acceptable use",
+          "p": "You agree not to misuse the website, attempt to access it without permission or submit false information."
+        },
+        {
+          "h": "Changes",
+          "p": "We may update these terms from time to time. Continued use of the website means you accept the updated terms."
+        }
+      ]
+    }
   }
 }

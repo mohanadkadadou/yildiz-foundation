@@ -465,5 +465,109 @@
         "desc": "Türkiye'nin ulusal üniversite giriş sınavı YKS'ye hazırlık."
       }
     ]
+  },
+  "programDetail": {
+    "notFound": "Program Bulunamadı",
+    "about": "Bu program hakkında",
+    "career": "Kariyer fırsatları",
+    "overview": "Program özeti",
+    "degree": "Derece",
+    "language": "Eğitim dili",
+    "duration": "Süre",
+    "years": "yıl",
+    "tuition": "Yıllık ücret",
+    "category": "Alan",
+    "university": "Üniversite",
+    "viewUniversity": "Üniversiteyi görüntüle",
+    "apply": "Bu programla ilgileniyor musunuz?",
+    "applyDesc": "Danışmanlarımız kabul, belgeler ve burslar konusunda size yardımcı olur.",
+    "back": "Tüm programlar",
+    "languages": {
+      "ENGLISH": "İngilizce",
+      "TURKISH": "Türkçe",
+      "ARABIC": "Arapça",
+      "ENGLISH_TURKISH": "İngilizce + Türkçe"
+    }
+  },
+  "blogPost": {
+    "notFound": "Makale Bulunamadı",
+    "back": "Tüm makaleler",
+    "published": "Yayın tarihi",
+    "share": "WhatsApp'ta paylaş",
+    "ctaTitle": "Kişisel tavsiyeye mi ihtiyacınız var?",
+    "ctaDesc": "Ücretsiz danışmanlık alın ve eğitiminiz için bir plan edinin."
+  },
+  "scholarshipsPage": {
+    "eyebrow": "Burslar",
+    "title": "Burslar ve İndirimler",
+    "subtitle": "Ortak üniversitelerimizin sunduğu burslar ve öğrenim ücreti indirimleri.",
+    "off": "indirim",
+    "amount": "Tutar",
+    "none": "Henüz burs eklenmedi. En güncel fırsatlar için bize ulaşın.",
+    "apply": "Bu bursu sor",
+    "viewUniversity": "Üniversiteyi görüntüle",
+    "searchPlaceholder": "Burs veya üniversite ara..."
+  },
+  "legal": {
+    "updated": "Son güncelleme: Ekim 2026",
+    "contactLine": "Sorularınız için yildiz2020t@gmail.com adresinden bize ulaşın.",
+    "privacy": {
+      "title": "Gizlilik Politikası",
+      "sections": [
+        {
+          "h": "Topladığımız bilgiler",
+          "p": "Danışmanlık randevusu aldığınızda, mesaj gönderdiğinizde veya hesap oluşturduğunuzda verdiğiniz bilgileri toplarız: ad, e-posta, telefon, ülke, eğitim ilgi alanları ve bütçe."
+        },
+        {
+          "h": "Nasıl kullanırız",
+          "p": "Bilgilerinizi yalnızca sorularınızı yanıtlamak, danışmanlık planlamak, üniversite başvurularında yardımcı olmak ve yurt dışı eğitimiyle ilgili güncellemeler göndermek için kullanırız."
+        },
+        {
+          "h": "Paylaşım",
+          "p": "Bilgilerinizi bir üniversite veya iş ortağıyla yalnızca başvurunuzu işlemek için gerektiğinde ve sizin bilginizle paylaşırız. Kişisel verilerinizi asla satmayız."
+        },
+        {
+          "h": "Saklama ve güvenlik",
+          "p": "Verileriniz erişimi kısıtlı, güvenli sunucularda saklanır. Parolalar şifrelenmiş biçimde tutulur ve ekibimiz tarafından okunamaz."
+        },
+        {
+          "h": "Haklarınız",
+          "p": "Bizimle iletişime geçerek kişisel verilerinize erişmeyi, düzeltmeyi veya silmeyi her zaman talep edebilirsiniz."
+        },
+        {
+          "h": "Çerezler",
+          "p": "Dil tercihinizi hatırlamak ve oturumunuzu açık tutmak için küçük bir çerez kullanırız. Reklam çerezi kullanmayız."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Hizmet Şartları",
+      "sections": [
+        {
+          "h": "Hizmetimiz hakkında",
+          "p": "Yildiz Vakfı eğitim danışmanlığı ve kabul desteği sağlar. Bir üniversite değiliz; kabul, vize veya burs garantisi vermeyiz, bunlara ilgili kurumlar karar verir."
+        },
+        {
+          "h": "Sitedeki bilgiler",
+          "p": "Üniversite, program ve ücret bilgilerini doğru tutmaya çalışırız ancak değişebilir. Başvurmadan veya ödeme yapmadan önce ayrıntıları üniversiteyle teyit edin."
+        },
+        {
+          "h": "Hesabınız",
+          "p": "Gönderdiğiniz bilgilerin doğruluğundan ve giriş bilgilerinizin gizliliğinden siz sorumlusunuz."
+        },
+        {
+          "h": "Ücretler",
+          "p": "Danışmanlık veya hizmet ücretleri önceden size açıklanır ve sizinle kararlaştırılır. Öğrenim ücretleri bu siteye değil üniversiteye ödenir."
+        },
+        {
+          "h": "Kabul edilebilir kullanım",
+          "p": "Siteyi kötüye kullanmamayı, izinsiz erişmeye çalışmamayı ve yanlış bilgi göndermemeyi kabul edersiniz."
+        },
+        {
+          "h": "Değişiklikler",
+          "p": "Bu şartları zaman zaman güncelleyebiliriz. Siteyi kullanmaya devam etmeniz güncel şartları kabul ettiğiniz anlamına gelir."
+        }
+      ]
+    }
   }
 }
