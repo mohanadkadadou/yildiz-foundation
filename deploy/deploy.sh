@@ -13,7 +13,7 @@ NEXT_PUBLIC_SITE_URL=https://yildizeducation.com NEXTAUTH_URL=https://yildizeduc
 
 rsync -az --delete -e "$SSH" \
   --exclude node_modules --exclude .git --exclude .claude --exclude '.env*' \
-  --exclude 'prisma/data-export/data*' --exclude '*.tsbuildinfo' --exclude '.next/cache' \
+  --exclude 'prisma/data-export/data*' --exclude /uploads --exclude '*.tsbuildinfo' --exclude '.next/cache' \
   --exclude 'الشهادات' --exclude 'البوم' --exclude '{src' --exclude .DS_Store \
   ./ "$HOST:$APP/"
 

@@ -495,7 +495,8 @@
     "published": "Published",
     "share": "Share on WhatsApp",
     "ctaTitle": "Need personal advice?",
-    "ctaDesc": "Book a free consultation and get a plan for your studies."
+    "ctaDesc": "Book a free consultation and get a plan for your studies.",
+    "minRead": "min read"
   },
   "scholarshipsPage": {
     "eyebrow": "Scholarships",

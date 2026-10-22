@@ -40,3 +40,4 @@ prisma/migrations/
 # generated data exports (contain real user data — never commit)
 prisma/data-export/data.json
 prisma/data-export/data-dump.sql
+/uploads

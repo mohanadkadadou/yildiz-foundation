@@ -495,7 +495,8 @@
     "published": "Yayın tarihi",
     "share": "WhatsApp'ta paylaş",
     "ctaTitle": "Kişisel tavsiyeye mi ihtiyacınız var?",
-    "ctaDesc": "Ücretsiz danışmanlık alın ve eğitiminiz için bir plan edinin."
+    "ctaDesc": "Ücretsiz danışmanlık alın ve eğitiminiz için bir plan edinin.",
+    "minRead": "dk okuma"
   },
   "scholarshipsPage": {
     "eyebrow": "Burslar",

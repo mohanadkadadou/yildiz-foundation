@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 import { requireAdminSession } from '@/lib/admin-auth'
+import { toSafeHtml, slugify } from '@/lib/sanitize-content'
+
+const toTags = (v: unknown): string[] =>
+  (Array.isArray(v) ? v : String(v || '').split(',')).map(t => String(t).trim()).filter(Boolean).slice(0, 12)
 
 export async function POST(req: NextRequest) {
   const session = await requireAdminSession()
@@ -8,9 +12,9 @@ export async function POST(req: NextRequest) {
 
   try {
     const data = await req.json()
-    if (!data.titleEn) return NextResponse.json({ error: 'titleEn is required' }, { status: 400 })
+    if (!data.titleEn?.trim()) return NextResponse.json({ error: 'An English title is required' }, { status: 400 })
 
-    const baseSlug = data.titleEn.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')
+    const baseSlug = slugify(data.slug || data.titleEn) || `post-${Date.now()}`
     let slug = baseSlug
     let i = 1
     while (await prisma.blogPost.findUnique({ where: { slug } })) { slug = `${baseSlug}-${++i}` }
@@ -18,16 +22,16 @@ export async function POST(req: NextRequest) {
     const post = await prisma.blogPost.create({
       data: {
         slug,
-        titleEn: data.titleEn, titleAr: data.titleAr || data.titleEn, titleTr: data.titleTr || data.titleEn,
-        excerptEn: data.excerptEn || '', excerptAr: data.excerptAr || data.excerptEn || '', excerptTr: data.excerptTr || data.excerptEn || '',
-        contentEn: data.contentEn || '', contentAr: data.contentAr || data.contentEn || '', contentTr: data.contentTr || data.contentEn || '',
+        titleEn: data.titleEn.trim(), titleAr: (data.titleAr || '').trim(), titleTr: (data.titleTr || '').trim(),
+        excerptEn: data.excerptEn || '', excerptAr: data.excerptAr || '', excerptTr: data.excerptTr || '',
+        contentEn: toSafeHtml(data.contentEn || ''), contentAr: toSafeHtml(data.contentAr || ''), contentTr: toSafeHtml(data.contentTr || ''),
         coverImage: data.coverImage || null,
         category: data.category || 'General',
-        tags: Array.isArray(data.tags) ? data.tags : String(data.tags || '').split(',').map((t: string) => t.trim()).filter(Boolean),
+        tags: toTags(data.tags),
         published: !!data.published,
       },
     })
-    return NextResponse.json({ success: true, id: post.id })
+    return NextResponse.json({ success: true, id: post.id, slug: post.slug })
   } catch (error) {
     console.error(error)
     return NextResponse.json({ error: 'Failed to create post' }, { status: 500 })

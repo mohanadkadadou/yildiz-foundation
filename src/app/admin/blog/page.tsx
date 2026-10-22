@@ -17,12 +17,22 @@ export default async function AdminBlogPage() {
       <div className="bg-white dark:bg-navy-800 rounded-2xl border border-gray-100 dark:border-navy-700 overflow-x-auto">
         <table className="w-full text-sm">
           <thead><tr className="border-b bg-gray-50 dark:bg-navy-900">
-            {['Title','Category','Published','Views','Date','Actions'].map(h => <th key={h} className="text-left py-3 px-4 text-gray-500 font-medium">{h}</th>)}
+            {['Article','Category','Languages','Status','Views','Date','Actions'].map(h => <th key={h} className="text-left py-3 px-4 text-gray-500 font-medium">{h}</th>)}
           </tr></thead>
           <tbody>{posts.map(p => (
             <tr key={p.id} className="border-b hover:bg-gray-50 dark:hover:bg-navy-700">
-              <td className="py-3 px-4 font-medium max-w-xs truncate">{p.titleEn}</td>
+              <td className="py-3 px-4 max-w-sm">
+                <div className="flex items-center gap-3">
+                  {p.coverImage ? <img src={p.coverImage} alt="" className="w-14 h-10 object-cover rounded-lg border border-gray-100 shrink-0" /> : <div className="w-14 h-10 rounded-lg bg-gray-100 dark:bg-navy-700 shrink-0" />}
+                  <span className="font-medium truncate">{p.titleEn}</span>
+                </div>
+              </td>
               <td className="py-3 px-4 text-gray-600 dark:text-gray-300">{p.category}</td>
+              <td className="py-3 px-4">
+                <div className="flex gap-1">{([['EN', p.contentEn], ['AR', p.contentAr], ['TR', p.contentTr]] as const).map(([l, c]) => (
+                  <span key={l} className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${c ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-400'}`}>{l}</span>
+                ))}</div>
+              </td>
               <td className="py-3 px-4"><PublishToggle id={p.id} published={p.published} /></td>
               <td className="py-3 px-4 text-gray-600 dark:text-gray-300">{p.views}</td>
               <td className="py-3 px-4 text-gray-600 dark:text-gray-300">{format(new Date(p.createdAt), 'MMM d, yyyy')}</td>

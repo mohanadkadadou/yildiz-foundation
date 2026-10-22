@@ -179,3 +179,29 @@ html { scroll-behavior: smooth; }
 
 .animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
 .animate-fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
+
+/* Article typography — used by the public blog post page and the admin rich-text editor */
+.article-body { color: #374151; font-size: 1.0625rem; line-height: 2; overflow-wrap: anywhere; }
+.dark .article-body { color: #d1d5db; }
+.article-body > * + * { margin-top: 1.15rem; }
+.article-body h2 { font-size: 1.6rem; font-weight: 800; line-height: 1.35; margin-top: 2.2rem; color: #0f2057; }
+.article-body h3 { font-size: 1.3rem; font-weight: 700; line-height: 1.4; margin-top: 1.8rem; color: #0f2057; }
+.article-body h4 { font-size: 1.1rem; font-weight: 700; margin-top: 1.5rem; color: #0f2057; }
+.dark .article-body h2, .dark .article-body h3, .dark .article-body h4 { color: #fff; }
+.article-body ul { list-style: disc; padding-inline-start: 1.6rem; }
+.article-body ol { list-style: decimal; padding-inline-start: 1.6rem; }
+.article-body li + li { margin-top: 0.35rem; }
+.article-body li > p { margin: 0; }
+.article-body a { color: #1d4ed8; text-decoration: underline; text-underline-offset: 3px; }
+.dark .article-body a { color: #93c5fd; }
+.article-body blockquote { border-inline-start: 4px solid #fbbf24; background: rgba(251, 191, 36, 0.08); padding: 0.75rem 1.1rem; border-radius: 0.5rem; font-style: italic; }
+.article-body img { max-width: 100%; height: auto; border-radius: 0.9rem; margin-inline: auto; display: block; }
+.article-body hr { border: 0; border-top: 2px solid #e5e7eb; margin-block: 2rem; }
+.dark .article-body hr { border-color: #1e2a5a; }
+.article-body code { background: rgba(15, 32, 87, 0.08); padding: 0.1rem 0.4rem; border-radius: 0.3rem; font-size: 0.9em; }
+.article-body strong { font-weight: 700; color: inherit; }
+
+/* editor chrome */
+.rich-editor .ProseMirror { min-height: 380px; padding: 1.25rem 1.5rem; outline: none; }
+.rich-editor .ProseMirror p.is-editor-empty:first-child::before { content: attr(data-placeholder); color: #9ca3af; float: inline-start; height: 0; pointer-events: none; }
+.rich-editor .ProseMirror img.ProseMirror-selectednode { outline: 3px solid #fbbf24; }

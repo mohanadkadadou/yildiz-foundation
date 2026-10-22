@@ -24,6 +24,7 @@ export function BlogSection({ posts }: Props) {
             <motion.article key={post.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
               className="bg-white dark:bg-navy-900 rounded-2xl overflow-hidden border border-gray-100 dark:border-navy-800 hover:shadow-lg transition-all group">
               <div className="h-48 bg-gradient-to-br from-navy-800 to-navy-600 relative overflow-hidden">
+                {post.coverImage && <img src={post.coverImage} alt="" className="absolute inset-0 w-full h-full object-cover" />}
                 <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-20">📚</div>
                 <div className="absolute top-3 left-3"><span className="bg-gold-500 text-white text-xs font-semibold px-3 py-1 rounded-full">{post.category}</span></div>
               </div>

@@ -5,7 +5,7 @@ import { format } from 'date-fns'
 import { useTranslations } from '@/components/shared/LocaleProvider'
 import { localize } from '@/lib/locale-helpers'
 
-interface Post { id: string; slug: string; titleEn: string; titleAr: string; titleTr: string; excerptEn: string; excerptAr: string; excerptTr: string; category: string; createdAt: Date }
+interface Post { id: string; slug: string; titleEn: string; titleAr: string; titleTr: string; excerptEn: string; excerptAr: string; excerptTr: string; category: string; coverImage: string | null; createdAt: Date }
 
 export function BlogClient({ posts }: { posts: Post[] }) {
   const { t, locale } = useTranslations()
@@ -22,6 +22,7 @@ export function BlogClient({ posts }: { posts: Post[] }) {
           {posts.map(post => (
             <article key={post.id} className="bg-white dark:bg-navy-900 rounded-2xl overflow-hidden border border-gray-100 dark:border-navy-800 hover:shadow-lg transition-all group">
               <div className="h-48 bg-gradient-to-br from-navy-800 to-navy-600 relative flex items-center justify-center">
+                {post.coverImage && <img src={post.coverImage} alt="" className="absolute inset-0 w-full h-full object-cover" />}
                 <span className="text-6xl opacity-30">📚</span>
                 <div className="absolute top-3 left-3"><span className="bg-gold-500 text-white text-xs font-semibold px-3 py-1 rounded-full">{post.category}</span></div>
               </div>
