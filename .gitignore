@@ -41,3 +41,4 @@ prisma/migrations/
 prisma/data-export/data.json
 prisma/data-export/data-dump.sql
 /uploads
+/private-uploads

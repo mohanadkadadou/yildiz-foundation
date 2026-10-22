@@ -3,7 +3,7 @@ import { authOptions } from '@/lib/auth'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
-import { GraduationCap, Users, Calendar, FileText, BarChart3, MessageSquare, Settings, BookOpen, Home, UserCog, GraduationCap as StudentsIcon } from 'lucide-react'
+import { GraduationCap, Users, Calendar, FileText, BarChart3, MessageSquare, Settings, BookOpen, Home, UserCog, GraduationCap as StudentsIcon, ClipboardList } from 'lucide-react'
 import { SignOutButton } from '@/components/admin/SignOutButton'
 
 const navItems = [
@@ -12,6 +12,7 @@ const navItems = [
   { href: '/admin/programs', label: 'Programs', icon: BookOpen },
   { href: '/admin/bookings', label: 'Bookings', icon: Calendar },
   { href: '/admin/leads', label: 'Leads', icon: Users },
+  { href: '/admin/applications', label: 'Applications', icon: ClipboardList },
   { href: '/admin/students', label: 'Students', icon: StudentsIcon },
   { href: '/admin/blog', label: 'Blog', icon: FileText },
   { href: '/admin/analytics', label: 'Analytics', icon: BarChart3 },

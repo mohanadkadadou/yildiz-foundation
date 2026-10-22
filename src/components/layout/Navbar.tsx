@@ -26,6 +26,7 @@ export function Navbar() {
   const { theme, setTheme } = useTheme()
   const { data: session } = useSession()
   const { t } = useTranslations()
+  const isAdmin = (session?.user as any)?.role === 'ADMIN'
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -70,10 +71,10 @@ export function Navbar() {
 
             {session ? (
               <div className="flex items-center gap-2">
-                <Link href="/admin" className={`px-3 xl:px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all ${
+                <Link href={isAdmin ? '/admin' : '/account'} className={`px-3 xl:px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all ${
                   scrolled ? 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-navy-800' : 'text-white hover:bg-white/10'
                 }`}>
-                  {t('nav.dashboard')}
+                  {isAdmin ? t('nav.dashboard') : t('nav.myAccount')}
                 </Link>
                 <button onClick={() => signOut()}
                   className="px-3 xl:px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all">
@@ -123,9 +124,9 @@ export function Navbar() {
               <div className="pt-3 border-t border-gray-100 dark:border-navy-800 flex flex-col gap-2">
                 {session ? (
                   <>
-                    <Link href="/admin" onClick={() => setIsOpen(false)}
+                    <Link href={isAdmin ? '/admin' : '/account'} onClick={() => setIsOpen(false)}
                       className="block text-center px-4 py-3 rounded-xl border border-navy-200 text-navy-800 dark:text-white font-medium">
-                      {t('nav.dashboard')}
+                      {isAdmin ? t('nav.dashboard') : t('nav.myAccount')}
                     </Link>
                     <button onClick={() => signOut()}
                       className="block w-full text-center px-4 py-3 rounded-xl bg-red-50 text-red-500 font-medium">

@@ -5,6 +5,7 @@ import { useTranslations } from '@/components/shared/LocaleProvider'
 import { localize } from '@/lib/locale-helpers'
 
 interface Program {
+  id: string
   nameEn: string; nameAr: string; nameTr: string
   descriptionEn: string; descriptionAr: string; descriptionTr: string
   careerOppsEn: string; careerOppsAr: string; careerOppsTr: string
@@ -66,6 +67,7 @@ export function ProgramDetailClient({ program: p }: { program: Program }) {
           <div className="bg-blue-900 rounded-2xl p-6 text-white">
             <h3 className="font-bold text-lg mb-2">{t('programDetail.apply')}</h3>
             <p className="text-blue-100 text-sm mb-4">{t('programDetail.applyDesc')}</p>
+            <Link href={`/apply?university=${p.university.slug}&program=${p.id}`} className="flex items-center justify-center gap-2 bg-white hover:bg-blue-50 text-blue-900 font-bold py-3 rounded-xl transition-colors mb-3">{t('applyCta.button')}</Link>
             <Link href="/consultation" className="flex items-center justify-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-xl transition-colors mb-3"><Calendar className="w-4 h-4" />{t('consultation.bookBtn')}</Link>
             <a href="https://wa.me/905395755269" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold py-3 rounded-xl transition-colors text-sm"><MessageCircle className="w-4 h-4" />{t('consultation.whatsappUs')}</a>
           </div>

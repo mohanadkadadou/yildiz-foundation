@@ -10,7 +10,7 @@ import { useTranslations } from '@/components/shared/LocaleProvider'
 const timeSlots = ['09:00', '10:00', '11:00', '12:00', '14:00', '15:00', '16:00', '17:00']
 
 export default function ConsultationPage() {
-  const { t } = useTranslations()
+  const { t, locale } = useTranslations()
   const meetingTypes = [
     { value: 'ZOOM', label: t('consultationPage.meetingZoom'), icon: Video },
     { value: 'GOOGLE_MEET', label: t('consultationPage.meetingGoogleMeet'), icon: Video },
@@ -33,7 +33,7 @@ export default function ConsultationPage() {
       const res = await fetch('/api/bookings', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, budget: form.budget ? Number(form.budget) : undefined }),
+        body: JSON.stringify({ ...form, locale, budget: form.budget ? Number(form.budget) : undefined }),
       })
       if (res.ok) { setSubmitted(true); toast.success(t('consultationPage.toastSuccess')) }
       else toast.error(t('consultationPage.toastError'))

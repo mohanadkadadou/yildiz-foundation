@@ -1,33 +1,37 @@
 'use client'
 import { signIn, getProviders } from 'next-auth/react'
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { Suspense, useEffect, useState } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import toast from 'react-hot-toast'
 import { Mail, Lock, Loader2 } from 'lucide-react'
 import { useTranslations } from '@/components/shared/LocaleProvider'
 
-export default function LoginPage() {
+function LoginForm() {
   const { t } = useTranslations()
   const router = useRouter()
+  const params = useSearchParams()
+  const rawCallback = params.get('callbackUrl') || '/'
+  const callbackUrl = rawCallback.startsWith('/') && !rawCallback.startsWith('//') ? rawCallback : '/'
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
   const [hasGoogle, setHasGoogle] = useState(false)
   useEffect(() => { getProviders().then(p => setHasGoogle(!!p?.google)).catch(() => {}) }, [])
 
-  const handleGoogle = () => { setLoading(true); signIn('google', { callbackUrl: '/' }) }
+  const handleGoogle = () => { setLoading(true); signIn('google', { callbackUrl }) }
   const handleEmail = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    const res = await signIn('credentials', { email, password, callbackUrl: '/', redirect: false })
+    const res = await signIn('credentials', { email, password, callbackUrl, redirect: false })
     setLoading(false)
     if (!res || res.error) {
       toast.error(t('auth.incorrectCredentials'))
       return
     }
-    router.push(res.url || '/')
+    router.push(callbackUrl)
+    router.refresh()
   }
 
   return (
@@ -59,9 +63,13 @@ export default function LoginPage() {
           </button>
         </form>
         <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-6">
-          {t('auth.noAccount')} <Link href="/consultation" className="text-navy-700 dark:text-blue-400 font-semibold hover:underline">{t('auth.bookConsultation')}</Link>
+          {t('authExtra.haveNoAccount')} <Link href={`/auth/register?callbackUrl=${encodeURIComponent(callbackUrl)}`} className="text-navy-700 dark:text-blue-400 font-semibold hover:underline">{t('authExtra.registerLink')}</Link>
         </p>
       </div>
     </div>
   )
+}
+
+export default function LoginPage() {
+  return <Suspense fallback={null}><LoginForm /></Suspense>
 }

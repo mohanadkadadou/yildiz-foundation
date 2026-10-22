@@ -9,6 +9,7 @@ interface Scholarship { id: string; nameEn: string; nameAr: string; nameTr: stri
 interface Requirement { id: string; textEn: string; textAr: string; textTr: string }
 interface University {
   country: string
+  slug: string
   nameEn: string; nameAr: string; nameTr: string
   cityEn: string; cityAr: string; cityTr: string
   descriptionEn: string; descriptionAr: string; descriptionTr: string
@@ -96,6 +97,7 @@ export function UniversityDetailClient({ uni }: { uni: University }) {
             <div className="bg-blue-900 rounded-2xl p-6 text-white">
               <h3 className="font-bold text-lg mb-2">{t('universities.apply')}</h3>
               <p className="text-blue-100 text-sm mb-4">{t('universities.getGuidance')}</p>
+              <Link href={`/apply?university=${uni.slug}`} className="block text-center bg-white hover:bg-blue-50 text-blue-900 font-bold py-3 rounded-xl transition-colors mb-3">{t('applyCta.button')}</Link>
               <Link href="/consultation" className="block text-center bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-xl transition-colors mb-3">{t('consultation.bookBtn')}</Link>
               <a href="https://wa.me/905395755269" target="_blank" rel="noopener noreferrer" className="block text-center bg-white/10 hover:bg-white/20 text-white font-semibold py-3 rounded-xl transition-colors text-sm">{t('consultation.whatsappUs')}</a>
             </div>

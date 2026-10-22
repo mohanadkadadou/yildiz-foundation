@@ -147,6 +147,7 @@ model Program {
 
   universityId     String
   university       University   @relation(fields: [universityId], references: [id], onDelete: Cascade)
+  applications     Application[]
 }
 
 enum DegreeType {
@@ -326,13 +327,60 @@ model Application {
   universityId String
   programId    String?
   status       AppStatus  @default(DRAFT)
+  intake       String?
+  locale       String     @default("en")
   notes        String?    @db.Text
+  adminMessage String?    @db.Text
+  adminNotes   String?    @db.Text
   documents    String[]
+  submittedAt  DateTime?
   createdAt    DateTime   @default(now())
   updatedAt    DateTime   @updatedAt
 
   user         User       @relation(fields: [userId], references: [id])
   university   University @relation(fields: [universityId], references: [id])
+  program      Program?   @relation(fields: [programId], references: [id], onDelete: SetNull)
+  files        ApplicationDocument[]
+  events       ApplicationEvent[]
+
+  @@index([userId])
+  @@index([status])
+}
+
+model ApplicationDocument {
+  id            String       @id @default(cuid())
+  applicationId String
+  type          DocumentType
+  fileName      String
+  storedName    String       @unique
+  mimeType      String
+  size          Int
+  createdAt     DateTime     @default(now())
+
+  application   Application  @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+
+  @@index([applicationId])
+}
+
+model ApplicationEvent {
+  id            String      @id @default(cuid())
+  applicationId String
+  status        AppStatus
+  note          String?     @db.Text
+  createdAt     DateTime    @default(now())
+
+  application   Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+
+  @@index([applicationId])
+}
+
+enum DocumentType {
+  PASSPORT
+  CERTIFICATE
+  TRANSCRIPT
+  PHOTO
+  LANGUAGE
+  OTHER
 }
 
 enum AppStatus {
