@@ -5,9 +5,10 @@ import { prisma } from '@/lib/prisma'
 import { UniversityForm } from '@/components/admin/UniversityForm'
 import { ProgramsManager } from '@/components/admin/ProgramsManager'
 
-export default async function EditUniversityPage({ params }: { params: { id: string } }) {
+export default async function EditUniversityPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
   const uni = await prisma.university.findUnique({
-    where: { id: params.id },
+    where: { id: id },
     include: { programs: { orderBy: { createdAt: 'asc' } } },
   })
   if (!uni) notFound()

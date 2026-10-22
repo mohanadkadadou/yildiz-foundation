@@ -11,8 +11,9 @@ export const metadata: Metadata = {
 
 const COUNTRIES = ['turkey', 'northern-cyprus', 'georgia', 'germany', 'spain', 'hungary', 'romania', 'syria']
 
-export default async function UniversitiesPage({ searchParams }: { searchParams: { country?: string } }) {
-  const lockedCountry = COUNTRIES.includes(searchParams.country || '') ? searchParams.country : undefined
+export default async function UniversitiesPage({ searchParams }: { searchParams: Promise<{ country?: string }> }) {
+  const { country } = await searchParams
+  const lockedCountry = COUNTRIES.includes(country || '') ? country : undefined
   const universities = await prisma.university.findMany({
     // Without a country filter, Turkish state universities are left out (they have their own dedicated page).
     where: lockedCountry

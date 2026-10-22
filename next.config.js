@@ -9,7 +9,7 @@ const nextConfig = {
     ],
   },
   experimental: {
-    serverActions: { allowedOrigins: ['localhost:3000'] },
+    serverActions: { allowedOrigins: ['localhost:3000', 'yildizeducation.com', 'www.yildizeducation.com'] },
   },
 }
 

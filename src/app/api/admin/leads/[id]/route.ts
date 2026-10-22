@@ -2,7 +2,8 @@ import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 import { requireAdminSession } from '@/lib/admin-auth'
 
-export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
   const session = await requireAdminSession()
   if (!session) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
@@ -11,7 +12,7 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
     const updates: any = {}
     if (typeof data.status === 'string') updates.status = data.status
     if (typeof data.notes === 'string') updates.notes = data.notes
-    const lead = await prisma.lead.update({ where: { id: params.id }, data: updates })
+    const lead = await prisma.lead.update({ where: { id: id }, data: updates })
     return NextResponse.json({ success: true, lead })
   } catch (error) {
     console.error(error)
@@ -19,12 +20,13 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
   }
 }
 
-export async function DELETE(_req: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(_req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
   const session = await requireAdminSession()
   if (!session) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   try {
-    await prisma.lead.delete({ where: { id: params.id } })
+    await prisma.lead.delete({ where: { id: id } })
     return NextResponse.json({ success: true })
   } catch (error) {
     console.error(error)

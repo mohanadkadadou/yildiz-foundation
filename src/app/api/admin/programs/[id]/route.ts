@@ -2,14 +2,15 @@ import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 import { requireAdminSession } from '@/lib/admin-auth'
 
-export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
   const session = await requireAdminSession()
   if (!session) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   try {
     const data = await req.json()
     const program = await prisma.program.update({
-      where: { id: params.id },
+      where: { id: id },
       data: {
         nameEn: data.nameEn, nameAr: data.nameAr || data.nameEn, nameTr: data.nameTr || data.nameEn,
         degreeType: data.degreeType, language: data.language,
@@ -24,12 +25,13 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
   }
 }
 
-export async function DELETE(_req: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(_req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
   const session = await requireAdminSession()
   if (!session) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   try {
-    await prisma.program.delete({ where: { id: params.id } })
+    await prisma.program.delete({ where: { id: id } })
     return NextResponse.json({ success: true })
   } catch (error: any) {
     if (error?.code === 'P2003') {

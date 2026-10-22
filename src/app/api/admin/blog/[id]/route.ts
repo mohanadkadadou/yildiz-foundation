@@ -2,7 +2,8 @@ import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 import { requireAdminSession } from '@/lib/admin-auth'
 
-export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
   const session = await requireAdminSession()
   if (!session) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
@@ -15,7 +16,7 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
     if (data.tags !== undefined) updates.tags = Array.isArray(data.tags) ? data.tags : String(data.tags || '').split(',').map((t: string) => t.trim()).filter(Boolean)
     if (typeof data.published === 'boolean') updates.published = data.published
 
-    const post = await prisma.blogPost.update({ where: { id: params.id }, data: updates })
+    const post = await prisma.blogPost.update({ where: { id: id }, data: updates })
     return NextResponse.json({ success: true, post })
   } catch (error) {
     console.error(error)
@@ -23,12 +24,13 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
   }
 }
 
-export async function DELETE(_req: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(_req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
   const session = await requireAdminSession()
   if (!session) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   try {
-    await prisma.blogPost.delete({ where: { id: params.id } })
+    await prisma.blogPost.delete({ where: { id: id } })
     return NextResponse.json({ success: true })
   } catch (error) {
     console.error(error)
