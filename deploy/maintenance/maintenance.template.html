@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0f2057">
+<title>Yildiz Foundation — Maintenance</title>
+<style>
+  :root { --navy:#0b1740; --navy2:#13297a; --gold:#fbbf24; --gold2:#d97706; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: "Segoe UI", Tahoma, "Noto Sans Arabic", system-ui, -apple-system, Arial, sans-serif;
+    color: #fff; background: radial-gradient(1200px 700px at 15% -10%, #1d3a9a 0%, transparent 60%), radial-gradient(900px 600px at 100% 110%, #7a4a07 0%, transparent 55%), linear-gradient(160deg, var(--navy) 0%, #0f2057 55%, #0a1230 100%);
+    display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; position: relative;
+  }
+  .orb { position: fixed; border-radius: 50%; filter: blur(70px); opacity: .35; pointer-events: none; animation: float 14s ease-in-out infinite; }
+  .orb.a { width: 340px; height: 340px; background: #2f5bff; top: -80px; inset-inline-start: -90px; }
+  .orb.b { width: 300px; height: 300px; background: var(--gold); bottom: -100px; inset-inline-end: -80px; animation-delay: -6s; opacity: .22; }
+  @keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(26px) } }
+
+  header { display: flex; justify-content: flex-end; padding: 22px 24px 0; position: relative; z-index: 2; }
+  .langs { display: inline-flex; gap: 4px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); border-radius: 999px; padding: 4px; backdrop-filter: blur(8px); }
+  .langs button { all: unset; cursor: pointer; padding: 7px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,.75); transition: all .2s; }
+  .langs button:hover { color: #fff; }
+  .langs button[aria-pressed="true"] { background: var(--gold); color: var(--navy); }
+  .langs button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+  main { flex: 1; display: grid; place-items: center; padding: 28px 20px; position: relative; z-index: 2; }
+  .card { width: 100%; max-width: 620px; text-align: center; background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05)); border: 1px solid rgba(255,255,255,.16); border-radius: 28px; padding: 44px 34px 34px; box-shadow: 0 30px 80px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.18); backdrop-filter: blur(14px); animation: rise .8s cubic-bezier(.2,.8,.2,1) both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(18px) scale(.985) } to { opacity: 1; transform: none } }
+
+  .logo { display: inline-block; background: #fff; border-radius: 16px; padding: 10px 18px; box-shadow: 0 10px 30px rgba(0,0,0,.3); }
+  .logo img { display: block; height: 46px; width: auto; }
+
+  .gears { position: relative; width: 112px; height: 96px; margin: 30px auto 6px; }
+  .gears svg { position: absolute; fill: none; stroke: var(--gold); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .gears .big { width: 74px; height: 74px; inset-inline-start: 6px; top: 8px; animation: spin 9s linear infinite; filter: drop-shadow(0 0 12px rgba(251,191,36,.45)); }
+  .gears .small { width: 44px; height: 44px; inset-inline-end: 6px; bottom: 0; stroke: #8fb0ff; animation: spin 6s linear infinite reverse; filter: drop-shadow(0 0 10px rgba(143,176,255,.4)); }
+  @keyframes spin { to { transform: rotate(360deg) } }
+
+  .chip { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; padding: 7px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--gold); background: rgba(251,191,36,.12); border: 1px solid rgba(251,191,36,.35); }
+  .chip i { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); animation: pulse 1.6s ease-in-out infinite; }
+  @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(251,191,36,.6) } 50% { box-shadow: 0 0 0 8px rgba(251,191,36,0) } }
+
+  h1 { font-size: clamp(26px, 5vw, 36px); line-height: 1.3; margin: 18px 0 12px; font-weight: 800; letter-spacing: -.01em; }
+  p.lead { font-size: 17px; line-height: 1.9; color: rgba(255,255,255,.82); max-width: 470px; margin-inline: auto; }
+
+  .bar { height: 6px; border-radius: 999px; background: rgba(255,255,255,.12); overflow: hidden; margin: 28px auto 10px; max-width: 340px; }
+  .bar span { display: block; height: 100%; width: 38%; border-radius: inherit; background: linear-gradient(90deg, var(--gold), #fff3c4, var(--gold2)); animation: slide 1.9s ease-in-out infinite; }
+  @keyframes slide { 0% { transform: translateX(-120%) } 100% { transform: translateX(300%) } }
+  [dir="rtl"] .bar span { animation-name: slideRtl; }
+  @keyframes slideRtl { 0% { transform: translateX(120%) } 100% { transform: translateX(-300%) } }
+  .hint { font-size: 13px; color: rgba(255,255,255,.6); min-height: 20px; }
+
+  .contact { margin-top: 26px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.12); }
+  .contact h2 { font-size: 14px; font-weight: 600; color: rgba(255,255,255,.7); margin-bottom: 14px; }
+  .btns { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+  .btn { display: inline-flex; align-items: center; gap: 9px; padding: 11px 20px; border-radius: 14px; font-size: 14px; font-weight: 700; text-decoration: none; transition: transform .2s, box-shadow .2s, background .2s; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+  .btn.wa { background: #1faa59; color: #fff; box-shadow: 0 8px 22px rgba(31,170,89,.35); }
+  .btn.wa:hover { background: #22bd64; }
+  .btn.mail { background: rgba(255,255,255,.10); color: #fff; border: 1px solid rgba(255,255,255,.22); }
+  .btn.mail:hover { background: rgba(255,255,255,.18); }
+  .btn svg { width: 18px; height: 18px; flex: none; }
+
+  footer { text-align: center; padding: 6px 20px 24px; font-size: 12.5px; color: rgba(255,255,255,.5); position: relative; z-index: 2; }
+
+  @media (max-width: 520px) { .card { padding: 34px 20px 26px; border-radius: 22px; } p.lead { font-size: 15.5px; } .btn { width: 100%; justify-content: center; } header { padding: 16px 16px 0; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+  <div class="orb a"></div><div class="orb b"></div>
+
+  <header>
+    <nav class="langs" aria-label="Language">
+      <button type="button" data-l="ar" aria-pressed="true">العربية</button>
+      <button type="button" data-l="en" aria-pressed="false">English</button>
+      <button type="button" data-l="tr" aria-pressed="false">Türkçe</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="card" role="status" aria-live="polite">
+      <span class="logo"><img src="__LOGO__" alt="Yildiz Foundation"></span>
+
+      <div class="gears" aria-hidden="true">
+        <svg class="big" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5l1.3 2.6a7.7 7.7 0 0 1 2.1.9l2.7-1 1.8 1.8-1 2.7c.4.7.7 1.4.9 2.1l2.6 1.3v2.5l-2.6 1.3c-.2.7-.5 1.4-.9 2.1l1 2.7-1.8 1.8-2.7-1c-.7.4-1.4.7-2.1.9L12 21.5H9.5l-1.3-2.6a7.7 7.7 0 0 1-2.1-.9l-2.7 1-1.8-1.8 1-2.7a7.7 7.7 0 0 1-.9-2.1L-.9 11.1V8.6l2.6-1.3c.2-.7.5-1.4.9-2.1l-1-2.7 1.8-1.8 2.7 1c.7-.4 1.4-.7 2.1-.9L9.5 2.5H12z" transform="translate(1.3 .7) scale(.94)"/></svg>
+        <svg class="small" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3l1.2 2.4c.7.2 1.3.5 1.9.9l2.5-.9 1.7 1.7-.9 2.5c.4.6.7 1.2.9 1.9L21 12l-1.7 1.2c-.2.7-.5 1.3-.9 1.9l.9 2.5-1.7 1.7-2.5-.9c-.6.4-1.2.7-1.9.9L12 21l-1.2-2.4c-.7-.2-1.3-.5-1.9-.9l-2.5.9-1.7-1.7.9-2.5c-.4-.6-.7-1.2-.9-1.9L3 12l2.4-1.2c.2-.7.5-1.3.9-1.9l-.9-2.5 1.7-1.7 2.5.9c.6-.4 1.2-.7 1.9-.9L12 3z"/></svg>
+      </div>
+
+      <span class="chip"><i></i><span id="chip"></span></span>
+      <h1 id="title"></h1>
+      <p class="lead" id="lead"></p>
+
+      <div class="bar" aria-hidden="true"><span></span></div>
+      <p class="hint" id="hint"></p>
+
+      <div class="contact">
+        <h2 id="contactTitle"></h2>
+        <div class="btns">
+          <a class="btn wa" href="https://wa.me/905395755269" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6A12 12 0 0 0 12 24c6.6 0 12-5.4 12-12 0-3.2-1.2-6.200-3.500-8.500zM12 22a9.900 9.900 0 0 1-5.100-1.400l-.4-.2-3.700 1 1-3.600-.2-.4A10 10 0 1 1 12 22zm5.500-7.500c-.3-.1-1.800-.9-2.100-1s-.5-.1-.7.100-.8 1-1 1.200-.4.200-.7.100a8.100 8.100 0 0 1-4-3.500c-.3-.5.3-.5.900-1.600.1-.2 0-.4 0-.5l-1-2.200c-.2-.6-.5-.5-.7-.5h-.6a1.200 1.200 0 0 0-.9.400 3.700 3.700 0 0 0-1.100 2.700 6.400 6.400 0 0 0 1.400 3.400 14.700 14.700 0 0 0 5.600 4.900c2 .8 2.700.9 3.700.7a3.100 3.100 0 0 0 2-1.400 2.500 2.500 0 0 0 .2-1.400c-.1-.1-.3-.2-.6-.4z"/></svg>
+            <span id="wa"></span>
+          </a>
+          <a class="btn mail" href="mailto:yildiz2020t@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.500 7.500 8.500 6 8.500-6"/></svg>
+            <span id="mail"></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="foot"></footer>
+
+<script>
+(function () {
+  var T = {
+    ar: { dir: 'rtl', title: 'نعمل على تحسين الموقع', chip: 'صيانة مجدولة', lead: 'نقوم حالياً بتحديث موقع مؤسسة يلدز لنقدّم لك تجربة أسرع وأفضل. سنعود خلال دقائق قليلة.', hint: 'نتحقق تلقائياً، وستُحدَّث الصفحة فور عودة الموقع.', contact: 'هل تحتاج مساعدة عاجلة؟', wa: 'راسلنا على واتساب', mail: 'أرسل بريداً إلكترونياً', foot: '© Yildiz Foundation — مستشارك التعليمي الأفضل', back: 'الموقع عاد! جارٍ التحويل…', doc: 'مؤسسة يلدز — قيد الصيانة' },
+    en: { dir: 'ltr', title: "We're improving the website", chip: 'Scheduled maintenance', lead: "We're updating Yildiz Foundation to give you a faster, better experience. We'll be back in just a few minutes.", hint: 'We check automatically — this page will refresh as soon as we are back.', contact: 'Need urgent help?', wa: 'Chat on WhatsApp', mail: 'Send us an email', foot: '© Yildiz Foundation — your best educational advisor', back: "We're back! Redirecting…", doc: 'Yildiz Foundation — Under maintenance' },
+    tr: { dir: 'ltr', title: 'Web sitesini geliştiriyoruz', chip: 'Planlı bakım', lead: 'Size daha hızlı ve daha iyi bir deneyim sunmak için Yildiz Vakfı sitesini güncelliyoruz. Birkaç dakika içinde döneceğiz.', hint: 'Otomatik kontrol ediyoruz; site açılır açılmaz sayfa yenilenecek.', contact: 'Acil yardıma mı ihtiyacınız var?', wa: "WhatsApp'tan yazın", mail: 'E-posta gönderin', foot: '© Yildiz Vakfı — en iyi eğitim danışmanınız', back: 'Geri döndük! Yönlendiriliyor…', doc: 'Yildiz Vakfı — Bakımda' }
+  };
+  function pick() {
+    var m = document.cookie.match(/(?:^|;\s*)locale=(ar|en|tr)/);
+    if (m) return m[1];
+    var n = (navigator.language || 'ar').slice(0, 2).toLowerCase();
+    return T[n] ? n : 'ar';
+  }
+  var cur = pick();
+  function apply(l) {
+    cur = l; var t = T[l];
+    document.documentElement.lang = l; document.documentElement.dir = t.dir; document.title = t.doc;
+    ['title', 'chip', 'lead', 'hint', 'wa', 'mail', 'foot'].forEach(function (id) { document.getElementById(id).textContent = t[id]; });
+    document.getElementById('contactTitle').textContent = t.contact;
+    document.querySelectorAll('.langs button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.l === l)); });
+  }
+  document.querySelectorAll('.langs button').forEach(function (b) {
+    b.addEventListener('click', function () { document.cookie = 'locale=' + b.dataset.l + '; path=/; max-age=31536000; SameSite=Lax'; apply(b.dataset.l); });
+  });
+  apply(cur);
+
+  // Poll the real site; reload as soon as it stops answering 503.
+  setInterval(function () {
+    fetch('/?_=' + Date.now(), { cache: 'no-store', credentials: 'same-origin' })
+      .then(function (r) { if (r.status !== 503) { document.getElementById('hint').textContent = T[cur].back; setTimeout(function () { location.reload(); }, 600); } })
+      .catch(function () {});
+  }, 15000);
+})();
+</script>
+</body>
+</html>
